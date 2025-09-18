@@ -227,6 +227,20 @@ body {
     font-size: 8rem;
     color: rgba(255, 255, 255, 0.8);
 }
+@media (max-width: 768px) {
+    .profile-image img{
+         position: relative;
+    top: 60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 6s ease-in-out infinite;
+    }
+}
 
 .floating-elements {
     position: absolute;
