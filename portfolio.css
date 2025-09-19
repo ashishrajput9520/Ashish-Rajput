@@ -231,8 +231,8 @@ body {
     .profile-image img{
     position: relative;
     top:30px;
-    width: 400px;
-    height: 400px;
+    width: 370px;
+    height: 370px;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     display: flex;
