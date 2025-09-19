@@ -230,9 +230,9 @@ body {
 @media (max-width: 768px) {
     .profile-image img{
     position: relative;
-    top: 50px;
-    width: 290px;
-    height: 290px;
+    top:30px;
+    width: 400px;
+    height: 400px;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     display: flex;
