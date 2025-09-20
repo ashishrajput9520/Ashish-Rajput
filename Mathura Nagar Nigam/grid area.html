@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid area</title>
+    <style>
+        .grid{
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas: 
+            'navbar navbar navbar navbar'
+            ' section section section aside'
+            ;
+            flex-wrap: wrap;
+        }
+        .box{
+            background-color: blueviolet;
+            border: 1px soild black;
+
+        }
+        #navbar{
+            grid-area:navbar;
+        }
+        #section{
+              grid-area:section;
+        }
+        #aside{
+              grid-area:aside;
+        }
+        
+    </style>
+
+</head>
+<body>
+     <div class="grid">
+        <div id="navbar" class="box">home about contact about</div>
+        <div id="section" class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, fugit sunt. Magnam facere commodi at ut, dolorum doloremque similique tempore!</div>
+        <div id="aside" class="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, similique architecto! Ducimus neque veritatis facilis.</div>
+        <!-- <div class="box">.items-4</div>
+        <div class="box">.items-5</div>
+          <div class="box">.items-1</div>
+        <div class="box">.items-2</div>
+        <div class="box">.items-3</div>
+        <div class="box">.items-4</div>
+        <div class="box">.items-5</div> -->
+    </div>
+    
+</body>
+</html>

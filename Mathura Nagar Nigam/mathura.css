@@ -1,0 +1,495 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    'navbar navbar navbar nav'
+    'section section section aside'
+    'footer footer footer footer'
+    ;
+    max-width: 1250px;
+    margin: 20px auto;
+}
+
+ #section{
+      grid-area:section;
+}
+#aside{
+    grid-area:aside;
+    }
+#footer{
+    grid-area:footer;
+}
+.main{
+    border: 1px solid rgb(189, 205, 206);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(95, 99, 97, 0.075);   
+}
+.slider-container {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.slider {
+    display: flex;
+    width: 400%; /* 4 slides = 4 * 100% */
+    animation: slide 16s infinite; /* 4 slides * 4s each */
+}
+
+.slide {
+    width: 25%; /* Each slide takes 25% of the slider width (100%/4) */
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Animation */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); } /* Show first slide */
+    25% { transform: translateX(-25%); } /* Move to second slide */
+    45% { transform: translateX(-25%); } /* Show second slide */
+    50% { transform: translateX(-50%); } /* Move to third slide */
+    70% { transform: translateX(-50%); } /* Show third slide */
+    75% { transform: translateX(-75%); } /* Move to fourth slide */
+    95% { transform: translateX(-75%); } /* Show fourth slide */
+    100% { transform: translateX(0); } /* Reset to first slide */
+}
+
+/* Navigation dots */
+.slider-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Active dot animation */
+@keyframes dotPulse {
+    0% { background-color: rgba(255, 255, 255, 0.5); }
+    20% { background-color: white; }
+    100% { background-color: rgba(255, 255, 255, 0.5); }
+}
+
+.dot:nth-child(1) { animation: dotPulse 16s infinite; }
+.dot:nth-child(2) { animation: dotPulse 16s infinite 4s; }
+.dot:nth-child(3) { animation: dotPulse 16s infinite 8s; }
+.dot:nth-child(4) { animation: dotPulse 16s infinite 12s; }
+
+.side-main{
+    border: 1px solid rgb(189, 205, 206);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(95, 99, 97, 0.075); 
+    
+}
+ .helpline{
+            width:100%;
+            margin-top:15px;
+            border: 1px solid rgb(180, 180, 180);
+            border-radius: 5px;
+        }
+        .helpline ul li a{
+           text-decoration: none;
+           margin-right: 20px;
+           
+        }
+        .hometag{
+            width:100%;
+            border: 1px solid rgb(194, 192, 192);
+            height: 100px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            border-radius: 5px; 
+        }
+        .about-sec{
+            display: flex;
+           flex-wrap: wrap; 
+           border: 1px solid white; 
+           justify-content: space-between;
+           align-items: center;
+               
+        }
+        .about-items{
+            flex: 1;
+           
+            border: 1px solid rgb(180, 176, 176);
+            box-shadow: 10px 10px 10px rgba(95, 99, 97, 0.075);
+            border-radius: 5px;
+            margin: 20px 5px;
+            height: 250px;
+        }
+        .about-items ul li,.rti-items ul li,.helpline ul li,.about-finance ul li,.yojna-items ul li{
+            list-style:none;
+            margin: 0px;
+            padding: 0px;
+           
+        }
+         .about-items ul ,.rti-items ul ,.helpline ul ,.about-finance ul ,.yojna-items ul {
+              margin: 0px;
+            padding:10px 8px;
+
+         }
+        .about-items ul li a{
+            line-height: 30px;
+            text-decoration: none;
+            list-style: none;
+            
+        }
+         .about-finance{
+             width:100%;
+            margin:50px 5px;
+            border: 1px solid rgb(180, 180, 180);
+            border-radius: 5px;
+         }
+          .rti-sec{
+            display: flex;
+           flex-wrap: wrap; 
+           border: 1px solid white; 
+           justify-content: space-between;
+           align-items: center;
+               
+        }
+        .rti-items{
+            flex: 1;
+            border: 1px solid rgb(180, 176, 176);
+            box-shadow: 10px 10px 10px rgba(95, 99, 97, 0.075);
+            border-radius: 5px;
+            margin: 5px;
+            height: 250px;
+
+        }
+        .rti-items ul li a{
+            line-height: 30px;
+            text-decoration: none;
+            list-style: none;
+        }
+          .yojna-sec{
+            display: flex;
+            flex-direction: row;
+            
+           
+           
+               
+        }
+        .yojna-items{
+            width: 100%;
+            border: 1px solid rgb(180, 176, 176);
+            box-shadow: 10px 10px 10px rgba(95, 99, 97, 0.075);
+            border-radius: 5px;
+            margin: 5px;
+            height: 250px;
+    
+        }
+        .yojna-items ul li a {
+            line-height: 20px;
+            text-decoration: none;
+            list-style: none;
+            
+        }
+        .marque{
+            width:100%;
+             margin-top: 20px;
+            border: 1px solid rgb(148, 148, 148);
+            height: 100px;
+            flex-wrap: wrap;
+            border-radius: 5px;
+        }
+        .img-slide{
+            width:100%;
+             margin-top: 20px;
+            border: 1px solid rgb(163, 161, 161);
+            height: 300px;
+            flex-wrap: wrap;
+            border-radius: 5px;
+        }
+        .ofc-order{
+            width:100%;
+            margin-top: 20px;
+            border: 1px solid rgb(192, 188, 188);
+            height: 400px;
+            flex-wrap: wrap;
+            border-radius: 5px;
+            border-radius: 5px;
+        }
+/* main side */
+.side-contact{
+            width:100%;
+            
+
+        }
+        .side-contact2{
+            width:100%;
+            margin: 15px 0px;
+            border: 1px solid rgb(172, 172, 172);
+            border-radius: 5px;
+            
+          
+        }
+         .side-contact2 ul li,.side-contact2 ul li a{
+           text-decoration: none;
+           list-style: none;
+           line-height: 20px;
+          
+        }
+         .side-contact2 ul {
+              margin: 0px;
+            padding:10px 8px;
+
+         }
+         .profile-sec{
+            width:100%;
+            margin: 15px 0px;
+            border: 1px solid rgb(156, 152, 152);
+            border-radius: 5px;
+            
+          
+        }
+        .profile{
+            border-radius: 80%;
+             height: 200px; 
+             margin:20px 50px;
+              border: 1px solid black;
+        }
+        
+        .disclaimer{
+
+            border: 1px solid gray;
+            border-radius: 5px;
+            text-align: center;
+            
+       
+        }
+        .footer-data{
+            display:grid;
+           grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+            border: 1px solid white; 
+            margin: 0px;
+            padding: 0px;
+          
+            
+        }
+        .footer-items{
+            border: 1px solid grey;
+            margin: 20px 10px;
+            border-radius: 5px;
+
+
+        }
+
+         .footer-items ul li, .footer-items ul li a{
+           text-decoration: none;
+           list-style: none;
+        }
+        .footer-items ul{
+            margin: 0px;
+            padding: 10px 10px;
+        }
+        .center{
+            text-align: center;
+        }
+        .copy{
+            text-align: center;
+            background: #000;
+            color: white;
+            padding: 10px;
+            margin: 0px;
+            
+        }
+      
+        
+        
+        /* madia quaries */
+        @media (min-width:750px) and (max-width:1500px) {
+           
+            .container{
+           
+            grid-template-areas: 
+            'navbar navbar navbar navbar'
+            'section section section aside'
+            'aside aside aside aside'
+            'footer footer footer footer'
+            ;
+            
+        }
+        .img-sec{
+            width: 100%;
+        }
+    }
+    @media (min-width:150px) and (max-width:1100px) {
+         
+            .container{
+           
+            grid-template-areas: 
+            'navbar navbar navbar navbar'
+            'section section section section'
+            'aside aside aside aside'
+            'footer footer footer footer'
+            ;
+            
+        }
+        .img-sec{
+            width: 100%;
+        }
+        .side-main{
+            width: 100%;
+        }
+        .profile{
+            border-radius: 80%;
+             height: 200px; 
+             margin:20px 400px;
+              border: 1px solid black;
+
+        }
+    }
+       @media (min-width:150px) and (max-width:800px) {
+         .about-sec{
+            display: flex;
+            flex-direction: column;
+          
+               
+        }
+    
+        .about-items{
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0px;
+        }
+        
+        .rti-sec{
+            display: flex;
+            flex-direction: column;
+          
+               
+        }
+        .rti-items{
+            width: 100%;
+            justify-content: center;
+            margin: 10px 0px;
+        }
+        .yojna-sec{
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-data{
+            justify-content: center;
+            align-items: center;
+        }
+         .profile{
+            border-radius: 80%;
+             height: 200px; 
+             margin:20px 300px;
+              border: 1px solid black;
+
+        }
+         
+        
+       }
+         @media (min-width:480px) and (max-width:1100px) {
+        .profile-div{
+            text-align: center;
+           margin:20px 400px;
+            width: 200px;
+            border: 1px solid rgb(173, 171, 171);
+            border-radius: 50%;
+            height:200px;
+            
+        }
+        }
+      
+         @media (min-width:480px) and (max-width:950px) {
+             .profile{
+            border-radius: 80%;
+             height: 200px; 
+             margin:20px 300px;
+              border: 1px solid black;
+
+        }
+       
+        }
+          @media (min-width:750px) and (max-width:950px) {
+             .profile{
+            border-radius: 80%;
+             height: 200px; 
+             margin:20px 300px;
+              border: 1px solid black;
+
+        }
+       
+        }
+         @media (min-width:700px) and (max-width:750px) {
+             .profile{
+            border-radius: 80%;
+             height: 200px; 
+             margin:20px 250px;
+              border: 1px solid black;
+
+        }
+       
+        }
+          @media (min-width:570px) and (max-width:700px) {
+             .profile{
+            border-radius: 80%;
+             height: 200px; 
+             margin:20px 200px;
+              border: 1px solid black;
+
+        }
+       
+        }
+          @media (min-width:350px) and (max-width:570px) {
+             .profile{
+            border-radius: 80%;
+             height: 200px; 
+             margin:20px 100px;
+              border: 1px solid black;
+
+        }
+       
+        }
+         @media (min-width:150px) and (max-width:350px) {
+             .profile{
+            border-radius: 80%;
+             height: 200px; 
+             margin:20px 50px;
+              border: 1px solid black;
+
+        }
+       
+        }
+         
+         
+         
+
+       
+     
+       
+            

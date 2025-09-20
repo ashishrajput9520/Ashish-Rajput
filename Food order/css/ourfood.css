@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* navigation-bar */
+#nav{
+    display: flex;
+    align-items: center;
+    position:sticky;
+    top: 0;
+}
+#nav::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+    width: 100%;
+    z-index:-1;
+    opacity: 0.2;
+}
+nav{
+  
+}
+/*nav logo and image */
+#logo{
+    margin: 10px 15px;
+}
+#logo img{
+     margin: 4px 0px;
+     height: 60px;
+}
+/* nav list style */
+#nav ul{
+    display: flex;
+}
+
+#nav ul li{
+    list-style: none;
+    font-size: 1.1rem;
+}
+#nav ul li a{
+    display: block;
+    padding:5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-family: "Grandstander", cursive;
+    margin-left: 10px;
+}
+#nav ul li a:hover{
+   color: rgb(0, 0, 0);
+   background-color: white;
+   border-radius: 40px;
+   
+
+}
+/* home section */
+#home{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 200px;
+    justify-content: center;
+    align-items: center;
+    height: 520px;
+}
+#home::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background:url(../img/bg5.jpg) no-repeat center center/cover;
+    height: 630px;
+    width: 100%;
+    z-index:-1;
+    opacity: 0.98;
+}
+/* home-text */
+#home h1{
+    color: white;
+    text-align: center;
+     font-family: "Poetsen One", sans-serif;
+     font-weight: 1rem;
+}
+#home p{
+    color: white;
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: "Grandstander", cursive;
+    margin: 2px;
+}
+.h-main{
+    font-size: 3.5rem;
+    padding: 15px;
+}
+
+.btn{
+    padding: 8px 30px;
+    border: 2px solid white;
+    background-color: darkred;
+    color: white;
+    margin: 30px;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.center{
+    text-align: center;
+}
+/* service section */
+.services{
+}
+#service-main{
+    display: flex;
+    margin: 5px;
+   
+}
+#service-main .service-box{
+   border: 1px solid rgb(206, 194, 194);
+   padding:25px;
+   margin: 10px;
+   border-radius: 10px;
+   box-shadow: 1px 2px 6px rgb(190, 183, 183);
+}
+#service-main .service-box img{
+  height: 150px;
+  display: block;
+  margin: auto;
+}
+.service-heading{
+    font-size: 2.5rem;
+    padding: 15px;
+}
+.serv-main{
+    font-size: 3.5rem;
+    padding: 15px;
+    margin-bottom: 5px;
+    font-family: "Poetsen One", sans-serif;
+    color: rgb(114, 4, 4)   ;
+}
+.service-heading{
+    font-family: "Poetsen One", sans-serif;
+    color: darkred;
+}
+.service-box p{
+    font-size: 1.5rem;
+    font-family: "Grandstander", cursive;
+}
+
+/* client-section */
+.client-heading{
+   font-size: 3.5rem;
+    padding: 15px;
+    font-family: "Poetsen One", sans-serif;
+    color: rgb(114, 4, 4)   ;
+}
+#client-section{
+   height: 300px;
+   position: relative;
+   top:50px;
+}
+#client-section::before{
+    content: "";
+    position: absolute;
+    background:url(../img/bg2.jpeg)no-repeat center center/cover;
+    height: 100%;
+    width: 100%;
+    z-index:-1;
+    opacity: 0.3;
+}
+#clients{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.client-item{
+    padding: 5px 30px;
+}
+.client-img{
+    height: 100px;
+    margin-top: 20px;
+    
+}
+.client-imgzomato{
+    height: 150px;
+  }
+#uber{
+    height: 50px;
+   
+}
+/* contact */
+#contactus{
+    position: relative;
+    top: 50px;
+}
+#contactus::before{
+    content: "";
+    position: absolute;
+    background:url(../img/contactus.jpg)no-repeat center center/cover;
+    height:540px;
+    width: 100%;
+    z-index:-1;
+    opacity: 0.4;
+}
+.contact-heading{
+    font-size: 3.5rem;
+    padding: 15px;
+    font-family: "Poetsen One", sans-serif;
+    color: rgb(114, 4, 4) ;
+   
+}
+.contact input{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+
+}
+.contact textarea{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+
+}
+.contact form{
+    width: 50%;
+    line-height:35px;
+}
+.contact label{
+    font-size: 1.5rem;
+    font-family: "Grandstander", cursive;
+    color: rgb(153, 14, 14);
+}
+/* footer */
+footer{
+    background-color: rgb(102, 100, 100);
+    padding: 7px 20px;
+    color: white;
+    font-family: sans-serif;
+}
+.contact{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-bottom:50px;
+}

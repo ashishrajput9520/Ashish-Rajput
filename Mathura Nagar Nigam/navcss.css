@@ -1,0 +1,429 @@
+* {
+   
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px; /* Base font size for A, A+, A- */
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Theme variables */
+:root {
+    --primary-bg: #fff;
+    --primary-text: #333;
+    --header-bg: #f0f0f0; /* Default header background */
+    --button-bg: #5cb85c;
+    --button-text: white;
+    --link-color: #007bff;
+}
+
+body[data-theme="blue"] {
+    --primary-bg: #e7f0ff;
+    --primary-text: #003366;
+    --header-bg: #cce0ff;
+    --button-bg: #0056b3;
+    --link-color: #004085;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+}
+body[data-theme="green"] {
+    --primary-bg: #e6ffee;
+    --primary-text: #155724;
+    --header-bg: #d4edda;
+    --button-bg: #1e7e34;
+    --link-color: #155724;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+}
+body[data-theme="yellow"] {
+    --primary-bg: #fff9e6;
+    --primary-text: #856404;
+    --header-bg: #fff3cd;
+    --button-bg: #d39e00;
+    --link-color: #856404;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+}
+body[data-theme="dark"] {
+    --primary-bg: #2c3034; /* Darker than default dark swatch */
+    --primary-text: #f8f9fa;
+    --header-bg: #343a40;
+    --button-bg: #5a6268;
+    --link-color: #6cafff;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+}
+body[data-theme="default"] {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #333;
+    color: white;
+    padding: 8px;
+    z-index: 10000;
+    transition: top 0.3s;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #fff8e1; /* Light orangish/yellow */
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    border-bottom: 1px solid #eee;
+    font-size: 0.9em;
+}
+
+.top-bar-left, .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between items */
+}
+
+.font-sizers button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 3px;
+}
+.font-sizers button:hover {
+    background-color: #777;
+}
+
+.theme-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.theme-selector span {
+    margin-right: 5px;
+}
+.theme-swatch {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 0; /* Remove default button padding */
+}
+
+.search-form {
+    display: flex;
+}
+.search-form input[type="text"] {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+    font-size: 0.9em;
+}
+.search-form button {
+    padding: 6px 10px;
+    background-color: #ffc107; /* Yellow */
+    color: #333;
+    border: 1px solid #e0a800;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
+    font-size: 0.9em;
+}
+.search-form button:hover {
+    background-color: #e0a800;
+}
+
+.visitors-count {
+    background-color: #dc3545; /* Red */
+    color: white;
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.admin-login-btn {
+    background-color: #343a40; /* Dark grey/black */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+.admin-login-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Main Header */
+.main-header {
+    background-color: var(--header-bg);
+    /* background-image: url('your-background-image.jpg'); optional */
+    background-size: cover;
+    background-position: center;
+    padding: 15px 20px;
+    position: relative; /* For hamburger positioning */
+    color: var(--primary-text);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    max-height: 80px; /* Adjust as needed */
+    width: auto;
+}
+.left-logo {
+    max-height: 130px; /* Example */
+}
+.right-logo {
+    max-height: 130px; /* Example */
+}
+
+.site-title {
+    text-align:left;
+    flex-grow: 1;
+}
+.site-title h1 {
+    font-size: 1.5rem;
+    color: #0056b3; /* Blue as in image */
+
+    font-weight: bold;
+}
+.site-title h2 {
+    font-size: 1.3em;
+    color: #d9534f; /* Orange/Red as in image */
+    font-weight: bold;
+}
+
+.header-info-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.helpline img{
+
+width:100%;
+height: 100px;
+}
+
+
+.user-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.user-icon {
+   max-height: 100px;
+    border-radius: 50%; /* If you use a person icon, it might not be circular */
+    margin-bottom: 5px;
+    /* For a Font Awesome icon instead of an image:
+    font-size: 3em; 
+    color: #ff6600; 
+    */
+}
+.auth-links a {
+    font-size: 0.9em;
+    color: #0056b3; /* Blue links */
+    font-weight: bold;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default, shown on small screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333; /* Hamburger line color */
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Main Navigation (for hamburger) */
+.main-nav {
+    display: none; /* Hidden by default, shown when hamburger is clicked */
+    background-color: #444;
+    padding: 10px 0;
+}
+.main-nav ul {
+    list-style: none;
+    text-align: center;
+}
+.main-nav ul li {
+    padding: 10px 0;
+}
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    display: block;
+}
+.main-nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Active state for hamburger */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+.main-nav.active {
+    display: block;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .site-title h1 { font-size: 1.2em; }
+    .site-title h2 { font-size: 1.1em; }
+    .logo { max-height: 60px; }
+    .left-logo { max-height: 70px; }
+    .right-logo { max-height: 60px; }
+    .helpline { font-size: 0.85em; }
+}
+
+@media (max-width: 880px) {
+    .top-bar {
+        font-size: 0.8em; /* Smaller font for top bar items */
+    }
+    .top-bar-left, .top-bar-right {
+        gap: 10px;
+    }
+    .search-form input[type="text"] { width: 120px; } /* Shrink search */
+
+    .header-content {
+        flex-direction: column; /* Stack main header items */
+        text-align: center;
+    }
+    .logo-link { /* Center logos when stacked */
+        margin: 10px auto;
+    }
+    .header-info-right {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    .site-title {
+      order: -1; /* Move title to top in column layout */
+    }
+    .left-logo-link { order: -2; } /* Ensure left logo is first */
+    .right-logo-link { order: 3; } /* Right logo last on mobile */
+
+    .hamburger {
+        display: block; /* Show hamburger */
+    }
+
+    /* Hide elements that will go into hamburger - adjust as needed */
+    .main-header .header-info-right, 
+    .main-header .right-logo-link {
+        /* You might choose to hide some parts entirely or move them into the .main-nav */
+        /* For simplicity, let's assume main-nav handles actual nav links */
+    }
+    /* If you want to move specific items from header-info-right into the nav */
+    /* you'll need more JS to append/prepend them or duplicate them in .main-nav */
+}
+
+@media (min-width:350px) and (max-width: 880px) {
+    .top-bar {
+        flex-direction: column; /* Stack top-bar sections */
+        gap: 10px;
+    }
+    .top-bar-left, .top-bar-right {
+        flex-direction: column; /* Stack items within sections */
+        width: 100%;
+        align-items: stretch; /* Make items full width */
+    }
+    .top-bar-left > *, .top-bar-right > * {
+        margin-bottom: 5px;
+    }
+    .search-form input[type="text"] {
+        width: calc(100% - 80px); /* Adjust search button width */
+    }
+    .font-sizers, .theme-selector {
+        justify-content: center;
+    }
+    .visitors-count, .admin-login-btn { text-align: center; }
+
+    .site-title h1 { font-size: 1.1em; }
+    .site-title h2 { font-size: 1em; }
+
+    /* Ensure hamburger is visible and not overlapped */
+    .main-header {
+        padding-top: 50px; /* Make space for hamburger if it's inside */
+    }s
+    .hamburger {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title h1 { font-size: 1em; }
+    .site-title h2 { font-size: 0.9em; }
+    .helpline-numbers { width: 90%; margin: 0 auto; }
+    .helpline { flex-direction: column; align-items: center; text-align: center; gap: 3px; }
+    .helpline .call-now { margin-left: 0; margin-top: 3px; }
+    .user-icon { width: 40px; height: 40px; }
+}
+@media on s(max-width: 880px) {
+    .site-title h1 { font-size: 1em; }
+    .site-title h2 { font-size: 0.9em; }
+    .helpline-numbers { width: 90%; margin: 0 auto; }
+    .helpline { flex-direction: column; align-items: center; text-align: center; gap: 3px; }
+    .helpline .call-now { margin-left: 0; margin-top: 3px; }
+    .user-icon { width: 40px; height: 40px; }
+}
+@media (min-width:350px) and (max-width:880px) {
+             nav{
+                width: 100%;
+             }
+        }
+       

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathura Nagar Nigam</title>
+    <link rel="stylesheet" href="mathura.css">
+    <link rel="stylesheet" href="navcss.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="font-sizers">
+                <button id="font-decrease" aria-label="Decrease font size">A-</button>
+                <button id="font-reset" aria-label="Reset font size">A</button>
+                <button id="font-increase" aria-label="Increase font size">A+</button>
+            </div>
+            <div class="theme-selector">
+                <span>Select Theme:</span>
+                <button class="theme-swatch" data-theme="default" style="background-color: #fff; border: 1px solid #ccc;" aria-label="Default Theme"></button>
+                <button class="theme-swatch" data-theme="blue" style="background-color: #007bff;" aria-label="Blue Theme"></button>
+                <button class="theme-swatch" data-theme="green" style="background-color: #28a745;" aria-label="Green Theme"></button>
+                <button class="theme-swatch" data-theme="yellow" style="background-color: #ffc107;" aria-label="Yellow Theme"></button>
+                <button class="theme-swatch" data-theme="dark" style="background-color: #343a40;" aria-label="Dark Theme"></button>
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <form class="search-form">
+                <input type="text" placeholder="search here something....">
+                <button type="submit">Search</button>
+            </form>
+            <span class="visitors-count">Visitors: 7589779</span>
+            <button class="admin-login-btn">Admin Login</button>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-content">
+            <a href="#" class="logo-link left-logo-link">
+                <img src="https://lh5.googleusercontent.com/proxy/tkCdTtNgyQOBaa1tFWyT7d09R8RilfXOmqKTyqzSv8vk9Kk9Fd14-e-mJRnDPJwYE5KAsMb3wj3e357DlsJ0eyE07Eib" alt="Nagar Nigam Mathura Vrindavan Logo" class="logo left-logo">
+            </a>
+            
+            <div class="site-title">
+                <h1>GOVERNMENT OF UTTAR PRADESH</h1>
+                <h2>नगर निगम मथुरा वृन्दावन</h2>
+            </div>
+
+            <div class="header-info-right">
+                <div class="helpline-numbers">
+                    
+                    <div class="helpline">
+                    <img src="https://lh6.googleusercontent.com/proxy/x7wbTOJxmMQXiS7kXLusR6n1dlFJZFNuvCrBYc8dtjtk2jcA3BEbO6uYh7GzUF3uG2iDUk3AeCpKYzWj7JPMnfUOyQ" alt="">
+                    </div>
+                </div>
+
+                <div class="user-actions">
+                    <img src="https://lh3.googleusercontent.com/proxy/JRLBGE-KKJtwRGR1IrItFt5NZ5WQ3R3BcK0eUQmf30FNf0aLu7ayynfm0dHA16JS_7HdajLhJ3Tu4R7WqElL_-8sSNkCS12wyK7w_G3Ap1sm0g" alt="User Icon" class="user-icon">
+                    <div class="auth-links">
+                        <a href="#">LOGIN</a> | <a href="#">REGISTER</a>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="logo-link right-logo-link">
+                <img src="https://urbandevelopment.up.nic.in/assets-new/images/Seal_of_Uttar_Pradesh.svg" alt="Uttar Pradesh Government Logo" class="logo right-logo">
+            </a>
+        </div>
+
+        <!-- Hamburger Menu for Mobile -->
+        <button class="hamburger" id="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    
+    <!-- Example of navigation links that would be part of the hamburger menu -->
+    <nav class="main-nav" id="main-navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Departments</a></li>
+            <li><a href="#">Contact</a></li>
+            <!-- Add more links as needed -->
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="section" class="main">
+             <div class="img-sec">
+               <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="https://assets.cntraveller.in/photos/62219e5f5934c6bf974e2a69/4:3/w_1298,h_973,c_limit/mathura%20lead%20(1).jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/01/05/5ff2db15dfdd68066ce88c2a9df1cc22_1000x1000.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="https://chardhambooking.com/wp-content/uploads/2021/01/wootrips-1-day-delhi-to-mathura-and-vrindavan-sightseeing-tour-package-private-car-header.jpg" alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="https://static.wixstatic.com/media/3ed1e1_8d2b5829e3364379a6f17a4677e3c799~mv2.jpg/v1/fill/w_568,h_320,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/3ed1e1_8d2b5829e3364379a6f17a4677e3c799~mv2.jpg" alt="Slide 4">
+            </div>
+        </div>
+        
+        <!-- Navigation dots -->
+        <div class="slider-nav">
+            <span class="dot" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+        </div>
+    </div>
+            </div>
+             <div class="helpline">
+                <div style="height: 40px; background: palevioletred; flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;">
+                    Helpline Numbers
+                </div>
+                <marquee>
+                <ul style="display: flex; flex-wrap: wrap; ">
+                    <li><a href="">Complaints</a></li><hr>
+                    <li><a href="">Birth Certificate</a> </li><hr>
+                    <li><a href="">Death Certificate</a></li><hr>
+                    <li><a href="">Online E-trader</a></li>
+                    <li></li>
+                </ul>
+                </marquee>
+            </div>
+              <div class="hometag">
+                <div style= background:rgb(232,255,22); flex-wrap: wrap;align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px; "></div>
+            </div>
+            <div class="about-sec">
+                <div class="about-items">
+                    <div style="background-color: rgb(255, 136, 136); height: 40px; flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;">About Nagar Nigam</div>
+                    <ul>
+                        <li><a href="">Introduction</a></li><hr>
+                        <li><a href=""> History of Nagar Nigam</a> </li><hr>
+                        <li><a href="">Aims and Objectives</a></li><hr>
+                        <li><a href="">About City</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="about-items">
+                    <div style="background-color: rgb(0, 162, 255); height: 40px; flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;" >Online Services</div>
+                    
+                    <ul>
+                        <li><a href="">Complaints</a></li><hr>
+                        <li><a href="">Birth Certificate</a> </li><hr>
+                        <li><a href="">Death Certificate</a></li><hr>
+                        <li><a href="">Online E-trader</a></li>
+                        <li></li>
+                    </ul>
+                    
+                </div>
+                <div class="about-items">
+                    <div style="background-color: rgb(158, 55, 255); height: 40px; flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;">Information</div>
+                    <ul>
+                        <li><a href="">Officers List</a></li><hr>
+                        <li><a href="">Construction Details</a> </li><hr>
+                        <li><a href="">List of Toilets</a></li><hr>
+                        <li><a href="">List of Dustbins</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="helpline">
+                <div style="width: 100%; height:40px; background: rgb(64, 242, 255); flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px; ">About Finance </div>
+                <marquee>
+                <ul style="display: flex; flex-wrap: wrap; ">
+                    <li><a href="">Complaints</a></li><hr>
+                    <li><a href="">Birth Certificate</a></li><hr>
+                    <li><a href="">Death Certificate</a></li><hr>
+                    <li><a href="">Online E-trader</a></li>
+                    <li></li>
+                </ul>
+                </marquee>
+            </div>
+            <div class="rti-sec">
+                <div class="rti-items">
+                    <div style="background-color: rgb(0, 162, 255); height: 40px; flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;" > About RTI</div> 
+                    <ul>
+                        <li><a href="">RTI Act</a></li><hr>
+                        <li><a href="">RTI Form</a></li><hr>
+                        <li><a href="">ITO Adhiniyam</a></li> <hr>
+                        <li><a href="">Public Information Officer</a></li> 
+                    </ul>
+                   
+                </div>
+                <div class="rti-items"><div style="background-color: rgb(158, 55, 255); height: 40px; flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;">Public Corner         </div>
+                    <ul>
+
+                        <li><a href="">Public Corner</a> </li><hr>
+                        <li><a href="">Post in Public Corner</a></li> <hr>          
+                        <li><a href="">Feedback</a></li> <hr>
+                        <li><a href="">Online Payment </a></li>
+                        <li></li>
+                    </ul>
+            </div>
+                <div class="rti-items">
+                    <div style="background-color: rgb(255, 136, 136); height: 40px; flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;">Grievance</div>
+                    <ul>
+                        <li><a href="">Employee Grievances</a> </li><hr>
+                        <li><a href="">Officer Directory</a></li><hr>
+                        <li><a href="">Contact Us</a></li> <hr>
+                        <li><a href="">Online Complaints</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="yojna-sec">
+                <div class="yojna-items">
+                    <div style="background-color: rgb(220, 255, 24); height: 40px; flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;" >AMRUT Yojna</div> 
+                    <ul>
+                        <li><a href="">AMRUT Yojna</a> </li><hr>
+                        <li><a href="">Amrut Guidelines</a></li><hr>
+                        <li><a href="">Children Park</a></li> <hr>
+                        <li><a href="">Amrut Gallery</a></li> <hr>
+                        <li><a href="">Amrut Reforms</a></li> 
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="yojna-items"><div style="background-color: rgb(177, 23, 23); height: 40px; flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;"> Swachh Bharat</div>
+                    <ul>
+                        <li><a href="">Public Corner</a> </li><hr>
+                        <li><a href="">Post in Public Corner</a></li> <hr>          
+                        <li><a href="">Feedback</a></li> <hr>
+                        <li><a href="">Online Payment </a></li><hr>
+                        <li><a href="">Feedback</a></li> 
+                        
+                        <li></li>
+                    </ul>
+            </div>
+            </div>
+             <div class="marque">
+                    <div style="height: 40px; background: rgb(232, 255, 22); flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;"></div>
+                </div>
+                <div class="img-slide">
+                    <div style="height: 40px; background: rgb(163, 255, 194); flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;">Swachh Bharat Mission : Nagar Nigam Mathura Vrindavan</div>
+                </div>
+                <div class="ofc-order">
+                    <div style="height: 40px; background: rgb(163, 255, 194); flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius:3px;border-top-left-radius: 3px;">Office Orders and Inspections</div>
+                </div>
+                 <div class="ofc-order">
+                    <div style="height: 40px; background: rgb(163, 255, 194); flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius:3px;border-top-left-radius: 3px;">Office Orders and Inspections</div>
+                </div>
+           
+           
+             </div>  
+        <div id="aside" class="side-main">
+             <div class="side-contact">
+                <img src="https://nagarnigamagra.com/wp-content/uploads/2022/11/153333-300x300.jpg" alt="" style="width: 100%; border-radius: 4px;">
+            </div>
+             <div class="side-contact2">
+                <div style="height: 40px; background: rgb(62, 252, 220); flex-wrap: wrap; align-content: center; text-align: center; border-top-right-radius: 3px;border-top-left-radius: 3px;"> Swachh Bharat</div>
+                   <marquee direction="up">
+                     <ul>
+                        <li><a href="">Plastic Ban Notification</a> </li><hr>
+                        <li><a href="">Door to door</a></li><hr>
+                        <li><a href="">List of Dustbins</a></li> <hr>
+                        <li><a href="">List of Litter Bins</a></li> <hr>
+                        <li><a href="">List of Toilets</a></li>
+                        <li></li>
+                    </ul>
+                    </marquee>
+            </div>
+            <div class="side-contact2">
+                <div style="height: 40px; background: rgb(255, 174, 0); flex-wrap: wrap; align-content: center; text-align: center; border-top-right-radius: 3px;border-top-left-radius: 3px;"> Swachh Bharat</div>
+                     <marquee direction="up">
+                     <ul>
+                        <li><a href="">Plastic Ban Notification</a> </li><hr>
+                        <li><a href="">Door to door</a></li><hr>
+                        <li><a href="">List of Dustbins</a></li> <hr>
+                        <li><a href="">List of Litter Bins</a></li> <hr>
+                        <li><a href="">List of Toilets</a></li>
+                        <li></li>
+                    </ul>
+                    </marquee>
+                
+            </div> 
+            <div class="side-contact">
+                <img src="https://nagarnigamagra.com/wp-content/uploads/2022/11/153333-300x300.jpg" alt="" style="width: 100%; border-radius: 4px;">
+            </div>
+            <div class="side-contact">
+            </div>
+                <div class="side-contact2">
+                <div style="height: 40px; background: rgb(62, 252, 220); flex-wrap: wrap;  align-content: center; text-align: center; border-top-right-radius: 5px;border-top-left-radius: 5px;">Commissioner Message</div>
+                    <ul>
+                        <li><a href="">Plastic Ban Notification</a> </li><hr>
+                        <li><a href="">Door to door</a></li><hr>
+                        <li><a href="">List of Dustbins</a></li> <hr>
+                        <li><a href="">List of Litter Bins</a></li> <hr>
+                        <li><a href="">List of Toilets</a></li>
+                        <li></li>
+                    </ul>
+            </div>
+            <div class="side-contact2">
+                <div style="height: 40px; background: rgb(252, 62, 62); flex-wrap: wrap;  align-content: center; text-align: center; border-top-right-radius: 5px;border-top-left-radius: 5px;">Commissioner Message</div>
+                    <ul>
+                        <li><a href="">Plastic Ban Notification</a> </li><hr>
+                        <li><a href="">Door to door</a></li><hr>
+                        <li><a href="">List of Dustbins</a></li> <hr>
+                        <li><a href="">List of Litter Bins</a></li> <hr>
+                        <li><a href="">List of Toilets</a></li>
+                        <li></li>
+                    </ul>
+            </div>
+             <div class="profile-sec">
+                <div clas style="height: 40px; background: rgb(79, 216, 0); flex-wrap: wrap;  align-content: center; text-align: center; border-top-right-radius: 5px;border-top-left-radius: 5px;">Commissioner Message</div>
+                    <div class="profile"></div><hr>
+                    <P style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quibusdam enim repellendus earum sunt aut id placeat corporis? Temporibus, minima.</P>
+            </div>
+            <div class="profile-sec">
+                <div style="height: 40px; background: rgb(79, 216, 0); flex-wrap: wrap;  align-content: center; text-align: center; border-top-right-radius: 5px;border-top-left-radius: 5px;">Commissioner Message</div>
+                  <div class="profile"></div><hr>
+                    <P style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quibusdam enim repellendus earum sunt aut id placeat corporis? Temporibus, minima.</P>
+            </div>
+        </div>
+        <footer id="footer">
+            <div class="disclaimer"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero repudiandae vitae laudantium quos accusantium modi saepe maiores earum odio placeat. Obcaecati modi esse incidunt reiciendis? Amet praesentium iste aut debitis.</p></div>
+            <div class="footer-data">
+                <div class="footer-items">
+                      <div style="height: 40px; background: rgb(255, 188, 4); flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;"> Swachh Bharat</div>
+                    <ul>
+                       <li><a href="">Public Corner</a> </li><hr>
+                        <li><a href="">Post in Public Corner</a></li> <hr>          
+                        <li><a href="">Feedback</a></li> <hr>
+                        <li><a href="">Online Payment </a></li><hr>
+                        <li><a href="">Feedback</a></li> <hr>
+                        <li><a href="">Online Payment </a></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="footer-items">
+                      <div style="height: 40px; background:rgb(255, 188, 4); flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;"> Swachh Bharat</div>
+                     <ul>
+                       <li><a href="">Public Corner</a> </li><hr>
+                        <li><a href="">Post in Public Corner</a></li> <hr>          
+                        <li><a href="">Feedback</a></li> <hr>
+                        <li><a href="">Online Payment </a></li><hr>
+                        <li><a href="">Feedback</a></li> <hr>
+                        <li><a href="">Online Payment </a></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="footer-items">
+                      <div style="height: 40px; background:rgb(255, 188, 4); flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;"> Swachh Bharat</div>
+                     <ul>
+                       <li><a href="">Public Corner</a> </li><hr>
+                        <li><a href="">Post in Public Corner</a></li> <hr>          
+                        <li><a href="">Feedback</a></li> <hr>
+                        <li><a href="">Online Payment </a></li><hr>
+                         <li><a href="">Feedback</a></li> <hr>
+                        <li><a href="">Online Payment </a></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="footer-items">
+                      <div style="height: 40px; background:rgb(255, 188, 4); flex-wrap: wrap; align-content: center; text-align: center;border-top-right-radius: 3px;border-top-left-radius: 3px;"> Swachh Bharat</div>
+                     <ul>
+                        <li><a href="">Public Corner</a> </li><hr>
+                        <li><a href="">Post in Public Corner</a></li> <hr>          
+                        <li><a href="">Feedback</a></li> <hr>
+                        <li><a href="">Online Payment </a></li><hr>
+                        <li><a href="">Feedback</a></li> <hr>
+                        <li><a href="">Online Payment </a></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        </div>
+        <div class="copy">
+            Copyright &copy;www.Mathura Nagar Nigam.com All right reserved
+        </div>    
+         <script src="script.js">
+        document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    const mainContent = document.getElementById('main-content'); // Or whatever your main content wrapper is
+
+    // Font Sizers
+    const fontIncreaseBtn = document.getElementById('font-increase');
+    const fontDecreaseBtn = document.getElementById('font-decrease');
+    const fontResetBtn = document.getElementById('font-reset');
+    let currentFontSize = 16; // Base font size in px
+    const minFontSize = 12;
+    const maxFontSize = 24;
+    const fontSizeStep = 2;
+
+    if (fontIncreaseBtn) {
+        fontIncreaseBtn.addEventListener('click', () => {
+            if (currentFontSize < maxFontSize) {
+                currentFontSize += fontSizeStep;
+                body.style.fontSize = currentFontSize + 'px';
+            }
+        });
+    }
+
+    if (fontDecreaseBtn) {
+        fontDecreaseBtn.addEventListener('click', () => {
+            if (currentFontSize > minFontSize) {
+                currentFontSize -= fontSizeStep;
+                body.style.fontSize = currentFontSize + 'px';
+            }
+        });
+    }
+
+    if (fontResetBtn) {
+        fontResetBtn.addEventListener('click', () => {
+            currentFontSize = 16; // Reset to base
+            body.style.fontSize = currentFontSize + 'px';
+        });
+    }
+
+    // Theme Selector
+    const themeSwatches = document.querySelectorAll('.theme-swatch');
+    themeSwatches.forEach(swatch => {
+        swatch.addEventListener('click', () => {
+            const theme = swatch.dataset.theme;
+            body.dataset.theme = theme;
+            // You might want to save this preference in localStorage
+            localStorage.setItem('selectedTheme', theme);
+        });
+    });
+
+    // Load saved theme from localStorage
+    const savedTheme = localStorage.getItem('selectedTheme');
+    if (savedTheme) {
+        body.dataset.theme = savedTheme;
+    }
+
+
+    // Hamburger Menu
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const mainNavigation = document.getElementById('main-navigation');
+
+    if (hamburgerMenu && mainNavigation) {
+        hamburgerMenu.addEventListener('click', () => {
+            hamburgerMenu.classList.toggle('active');
+            mainNavigation.classList.toggle('active');
+            const isExpanded = hamburgerMenu.getAttribute('aria-expanded') === 'true' || false;
+            hamburgerMenu.setAttribute('aria-expanded', !isExpanded);
+        });
+    }
+
+    // Search form placeholder
+    const searchForm = document.querySelector('.search-form');
+    if (searchForm) {
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Search functionality not implemented in this demo.');
+        });
+    }
+    
+    // Admin login button placeholder
+    const adminLoginBtn = document.querySelector('.admin-login-btn');
+    if(adminLoginBtn) {
+        adminLoginBtn.addEventListener('click', () => {
+            alert('Admin login page/modal not implemented in this demo.');
+        });
+    }
+
+});
+    </script>
+         
+        
+        
+        
+    
+</body>
+</html>

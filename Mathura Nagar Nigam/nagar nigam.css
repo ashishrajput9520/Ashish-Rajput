@@ -1,0 +1,259 @@
+
+        body{
+            font-family: sans-serif;
+        }
+        
+        .container{
+            /* max-width: 1500px; */
+            margin:20px auto;
+            /* border: 1px solid black; */
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .main{
+            /* width: 800px; */
+            flex-shrink: 1;
+            flex-basis: 800px;
+            flex-grow: 2;
+            border: 1px solid rgb(212, 212, 212);
+            margin: 20px 20px 20px 40px;
+            flex-wrap: wrap;
+            border-radius: 5px;
+            box-shadow: 10px 10px 10px rgba(95, 99, 97, 0.075);
+            width: 100%;
+            
+        }
+        .side-main{
+            /* flex: 1; */
+            flex-basis: 300px;
+            flex-shrink: 1;
+            flex-grow: 1;
+            /* width: 400px; */
+            border: 1px solid rgb(206, 206, 206);
+            margin: 20px 20px 20px 20px;
+            flex-wrap: wrap;
+            border-radius: 5px;
+            box-shadow: 10px 10px 10px rgba(95, 99, 97, 0.075);
+           
+        }
+        .img-sec{
+            width:100%;
+            margin: 20px;
+            border: 1px solid rgb(116, 112, 112);
+            
+            flex-wrap: wrap;
+            border-radius: 5px;
+           
+        }
+        .helpline{
+            width:90%;
+            margin: 20px;
+            border: 1px solid rgb(180, 180, 180);
+            height: 100px;
+            flex-wrap: wrap;
+            border-radius: 5px;
+           
+        }
+        .hometag{
+            width:90%;
+            margin: 20px;
+            border: 1px solid rgb(194, 192, 192);
+            height: 100px;
+            flex-wrap: wrap;
+            border-radius: 5px;
+           
+        }
+        .about-sec{
+            display: flex;
+           flex-wrap: wrap; 
+           border: 1px solid white; 
+           padding-left: 20px;
+               
+        }
+        .about-items{
+            width: 222px;
+            margin: 0px 20px 20px 20px;
+            border: 1px solid rgb(180, 176, 176);
+            /* height: 280px; */
+            /* flex-wrap: wrap; */
+            box-shadow: 10px 10px 10px rgba(95, 99, 97, 0.075);
+            border-radius: 5px;
+            
+        }
+        .about-items:hover{
+            transform: scale(1.1);
+        }
+        .about-finance{
+            width: autopx;
+            margin: 20px;
+            border: 1px solid rgb(187, 187, 187);
+            /* height: 100px; */
+            flex-wrap: wrap;
+            box-shadow: 10px 10px 10px rgba(95, 99, 97, 0.075);
+            border-radius: 5px;
+        }
+        .about-rti{
+            display: flex;
+            flex-wrap: wrap;
+              border: 1px solid white;
+              padding-left: 20px;       
+           
+        }
+        .rti-items{
+            width: 222px;
+            margin: 20px;
+            border: 1px solid rgb(153, 153, 153);
+            height: 280px;
+            box-shadow: 10px 10px 10px rgba(95, 99, 97, 0.075);
+            border-radius: 5px;
+          
+
+        }
+        .rti-items:hover{
+            transform: scale(1.1);
+        }
+        .yojna{
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 20px;
+        }
+        .yojna-items{
+            width: 355px;
+            margin:20px;
+            border: 1px solid rgb(182, 181, 181);
+            height: 280px;
+            flex-wrap: wrap;
+            box-shadow: 10px 10px 10px rgba(95, 99, 97, 0.075);
+            border-radius: 5px;
+
+        }
+        .marque{
+            width:90%;
+            margin: 20px;
+            border: 1px solid rgb(148, 148, 148);
+            height: 100px;
+            flex-wrap: wrap;
+            border-radius: 5px;
+        }
+        .img-slide{
+            width:90%;
+            margin: 20px;
+            border: 1px solid rgb(163, 161, 161);
+            height: 300px;
+            flex-wrap: wrap;
+            border-radius: 5px;
+        }
+        .ofc-order{
+            width:790px;
+            margin: 20px;
+            border: 1px solid rgb(192, 188, 188);
+            height: 400px;
+            flex-wrap: wrap;
+            border-radius: 5px;
+            border-radius: 5px;
+        }
+        /* .side-contact */
+        .side-contact{
+            width:90%;
+            margin: 20px;
+
+        }
+        .side-contact2{
+            width:90%;
+            margin: 20px;
+            border: 1px solid rgb(172, 172, 172);
+            border-radius: 5px;
+
+        }
+        ul{
+            list-style: none;
+            padding: 0px 20px 20px 10px;
+        }
+        li a{
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            line-height: 35px;
+            font-family: sans-serif;
+        }
+        /* navigation */
+        *
+		{
+			padding: 0px;
+			margin: 0px;
+			flex-wrap: wrap;
+		}
+		
+		.main-header{
+		margin: 0px;
+		padding: 0px;
+		}
+		.header{
+			display: flex;
+			flex-wrap: wrap;
+			padding: 10px;
+			height: 20px;
+			border-bottom: 1px solid darkred;
+			background-color: rgb(255, 172, 19);
+
+			
+		}
+		.header-button{
+		margin-left:120px ;
+		text-decoration-style: none;
+        border: none;
+        background-color: yellow;
+        text-decoration: none;
+        width: 100px;
+        border-radius: 10px;
+
+
+		}
+		.header-part2{
+			background-color: rgb(255, 169, 10);
+			padding: 5px;
+			display: flex;
+
+		}
+		.UPimg{
+			margin-left: 250px;
+		}
+
+		.header-input1{
+			margin-left: 550px;
+			width: 330px;
+			text-align: center;
+			flex-wrap: wrap;
+		}
+		.hhelp{
+			margin-left: 120px;	
+		}
+		.h4{
+			margin:5px 0 0 7px;
+			color: darkred;
+		}
+		.logo{
+			height:100px;
+			width: 100px;
+		}
+		.tag{
+		padding-left: 80px;
+        text-align: center;
+        line-height: 35px;
+        text-decoration: none;
+        
+        
+
+		}
+		.a{
+			text-decoration: none;
+			font-size: 30px;
+        }
+        a{
+            text-decoration: none;
+        }
+        input {
+            display: block;
+        }
