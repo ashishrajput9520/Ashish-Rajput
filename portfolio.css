@@ -746,3 +746,7 @@ section {
 #a-link{
     text-decoration: none;
 }
+#a-link:hover{
+    text-decoration: none;
+    color: #e2e8f0;
+}
