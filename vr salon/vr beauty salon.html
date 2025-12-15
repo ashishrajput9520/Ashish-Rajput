@@ -18,10 +18,10 @@
         <span class="brand-name">VR BeautY Salon</span>
       </a>
       <div class="links">
-        <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a href="#testimonials">Reviews</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#testimonials" class="nav-link">Reviews</a>
         <a class="btn" href="#contact">Book Now</a>
       </div>
     </nav>
@@ -113,7 +113,7 @@
                <img src="/Ashish-Rajput/vr salon/img/gallery-2.jpg">
                <img src="/Ashish-Rajput/vr salon/img/gallery-1.jpg">
                 <img src="/Ashish-Rajput/vr salon/img/gallery-4.jpg">
-                <div style="text-align: center; display: flex; justify-content: center;align-items: center;"><a href="" style="text-decoration: none; color: white;">View More</a></div>
+                <div style="text-align: center; display: flex; justify-content: center;align-items: center;"><a href="gallery.html" style="text-decoration: none; color: white;" class="btn">View More</a></div>
       </div>
     </div>
   </section>
@@ -153,6 +153,30 @@
     </div>
   </section>
 
+
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">What are your working hours?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer">We're open from 10:00 AM to 7:00 PM, Monday through Sunday.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do I book an appointment?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer">You can book an appointment by filling out the contact form, calling us at +91 7668751256, or messaging us on Instagram @vrbeautysalon23.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What payment methods do you accept?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer">We accept cash, UPI, and all major credit/debit cards.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you offer bridal packages?<span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Yes, we offer customizable bridal packages. Please contact us for more details and to schedule a consultation.</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section id="contact">
     <div class="container contact">
       <div>
@@ -160,8 +184,8 @@
         <div class="section-sub">Tell us what you’re looking for—our team will get back within 1 business day.</div>
         <ul>
           <li>Mon–Sun: 10:00am – 7:00pm</li>
-           <li>Instagram: @vrbeautysalon23</li>
-          <li>Phone:+91 7668751256</li>
+          <li><a href="https://instagram.com/vrbeautysalon23" target="_blank" style="color: inherit; text-decoration: none;">Instagram: @vrbeautysalon23</a></li>
+          <li><a href="tel:+917668751256" style="color: inherit; text-decoration: none;">Phone: +91 7668751256</a></li>
         </ul>
       </div>
 
@@ -223,8 +247,25 @@
     function show(el) { el.style.display = 'block'; }
     function hide(el) { el.style.display = 'none'; }
 
-    function validateEmail(value) {
+    function isValidEmail(value) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    // Function to save inquiry to localStorage
+    function saveInquiry(data) {
+      // Get existing inquiries or initialize empty array
+      const inquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
+      
+      // Add new inquiry
+      inquiries.push({
+        ...data,
+        id: Date.now().toString(),
+        date: new Date().toISOString(),
+        status: 'pending'
+      });
+      
+      // Save back to localStorage
+      localStorage.setItem('inquiries', JSON.stringify(inquiries));
     }
 
     form.addEventListener('submit', function (e) {
@@ -234,41 +275,80 @@
       const phone = document.getElementById('phone');
       const service = document.getElementById('service');
       const message = document.getElementById('message');
+      let isValid = true;
 
-      let valid = true;
+      // Reset error states
+      document.querySelectorAll('.error').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('input, textarea, select').forEach(el => {
+        el.style.borderColor = '';
+      });
 
-      // Name
-      const nameError = document.getElementById('nameError');
-      if (!name.value || name.value.trim().length < 2) { show(nameError); valid = false; } else { hide(nameError); }
+      // Validate name
+      if (!name.value.trim()) {
+        showError(name, 'Please enter your name');
+        isValid = false;
+      }
 
-      // Email
-      const emailError = document.getElementById('emailError');
-      if (!validateEmail(email.value)) { show(emailError); valid = false; } else { hide(emailError); }
+      // Validate email
+      if (!email.value.trim()) {
+        showError(email, 'Please enter your email');
+        isValid = false;
+      } else if (!isValidEmail(email.value)) {
+        showError(email, 'Please enter a valid email');
+        isValid = false;
+      }
 
-      // Phone (optional but patterned)
-      const phoneError = document.getElementById('phoneError');
-      if (phone.value && !new RegExp(phone.getAttribute('pattern')).test(phone.value)) { show(phoneError); valid = false; } else { hide(phoneError); }
+      // Validate service
+      if (!service.value) {
+        showError(service, 'Please select a service');
+        isValid = false;
+      }
 
-      // Service
-      const serviceError = document.getElementById('serviceError');
-      if (!service.value) { show(serviceError); valid = false; } else { hide(serviceError); }
+      // Validate message
+      if (!message.value.trim()) {
+        showError(message, 'Please enter your message');
+        isValid = false;
+      }
 
-      // Message
-      const messageError = document.getElementById('messageError');
-      if (!message.value || message.value.trim().length < 10) { show(messageError); valid = false; } else { hide(messageError); }
+      if (!isValid) return;
 
-      if (!valid) return;
+      // Save the inquiry
+      const inquiryData = {
+        name: name.value.trim(),
+        email: email.value.trim(),
+        phone: phone.value.trim(),
+        service: service.value,
+        message: message.value.trim()
+      };
+      
+      saveInquiry(inquiryData);
 
-      // Simulate successful submit
+      // Show success message and reset form
       show(successBanner);
       form.reset();
       service.value = '';
+      
+      // Scroll to success message
       setTimeout(() => successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        hide(successBanner);
+      }, 5000);
     });
+
+    function showError(input, message) {
+      input.style.borderColor = '#ff6b6b';
+      const errorEl = document.createElement('div');
+      errorEl.className = 'error';
+      errorEl.style.color = '#ff6b6b';
+      errorEl.style.fontSize = '13px';
+      errorEl.style.marginTop = '4px';
+      errorEl.textContent = message;
+      input.parentNode.appendChild(errorEl);
+    }
 
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
-
