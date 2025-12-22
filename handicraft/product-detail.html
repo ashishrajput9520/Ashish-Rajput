@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - SUPER GOLDSTAR</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .product-detail {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 30px;
+      }
+      .product-gallery {
+        flex: 1;
+        min-width: 300px;
+      }
+      .main-image {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        cursor: pointer;
+      }
+      .thumbnail-container {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+      .thumbnail {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 2px solid transparent;
+      }
+      .thumbnail.active {
+        border-color: #ff6b6b;
+      }
+      .product-info {
+        flex: 1;
+        min-width: 300px;
+      }
+      .product-title {
+        font-size: 28px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .product-price {
+        font-size: 24px;
+        color: #e74c3c;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .product-description {
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 25px;
+      }
+      .product-meta {
+        margin: 25px 0;
+      }
+      .meta-item {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .meta-label {
+        font-weight: 600;
+        min-width: 120px;
+        color: #333;
+      }
+      .action-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-align: center;
+        display: inline-block;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #ff6b6b, #feca57);
+        color: white;
+      }
+      .btn-secondary {
+        background: #f1f1f1;
+        color: #333;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .quantity-selector {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+      }
+      .quantity-btn {
+        width: 40px;
+        height: 40px;
+        background: #f1f1f1;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .quantity-input {
+        width: 60px;
+        height: 40px;
+        text-align: center;
+        border: 1px solid #ddd;
+        margin: 0 5px;
+        font-size: 16px;
+      }
+      .delivery-info {
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+      @media (max-width: 768px) {
+        .product-container {
+          flex-direction: column;
+        }
+        .action-buttons {
+          flex-direction: column;
+        }
+        .btn {
+          width: 100%;
+        }
+      }
+    </style>
+    <style>
+      .enquiry-modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.45);
+        justify-content: center;
+        align-items: center;
+      }
+      .enquiry-modal-content {
+        background: #fff;
+        border-radius: 12px;
+        max-width: 420px;
+        width: 95vw;
+        margin: 60px auto;
+        padding: 36px 28px 28px 28px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        position: relative;
+        animation: fadeInModal 0.2s;
+      }
+      @keyframes fadeInModal {
+        from { transform: translateY(60px); opacity:0; }
+        to { transform: translateY(0); opacity:1; }
+      }
+      .enquiry-close {
+        position: absolute;
+        top: 18px;
+        right: 24px;
+        font-size: 30px;
+        color: #888;
+        cursor: pointer;
+        font-weight: bold;
+        z-index: 1;
+        transition: color 0.2s;
+      }
+      .enquiry-close:hover { color: #e74c3c; }
+      .form-group {
+        margin-bottom: 18px;
+      }
+      .form-group label {
+        font-weight: 500;
+        display: block;
+        margin-bottom: 6px;
+        color: #222;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+        background: #fafbfc;
+        transition: border 0.2s;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border: 1.5px solid #feca57;
+        outline: none;
+        background: #fffbe9;
+      }
+      .form-error {
+        color: #e74c3c;
+        font-size: 13px;
+        margin-top: 2px;
+        min-height: 16px;
+      }
+      @media (max-width: 600px) {
+        .enquiry-modal-content {
+          padding: 18px 8px 18px 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+                    <img src="img/logo.png" alt="logo image">
+                </div>
+        <div class="nav-wrapper">
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+            <li><a href="document.html">Documents</a></li>
+
+            <li class="menu-close-btn">
+              <button class="menu-close">&times;</button>
+            </li>
+          </ul>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="nav-right">
+            <!-- <div class="search-bar">
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search products...">
+                        <i class="fas fa-search"></i>
+                    </div> -->
+            <!-- Cart icon removed -->
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+      <div class="container">
+        <div class="product-container">
+          <div class="product-gallery">
+            <img id="mainImage" src="" alt="Product Image" class="main-image" />
+            <div class="thumbnail-container" id="thumbnailContainer">
+              <!-- Thumbnails will be added by JavaScript -->
+            </div>
+          </div>
+          <div class="product-info">
+            <h1 class="product-title" id="productTitle">Loading...</h1>
+            <div class="product-price" id="productPrice"></div>
+            <div class="product-rating">
+              <span class="stars">★★★★★</span>
+              <span class="review-count">(0 reviews)</span>
+            </div>
+            <p class="product-description" id="productDescription"></p>
+
+            <div class="product-meta">
+              <div class="meta-item">
+                <span class="meta-label">Availability:</span>
+                <span id="productStock" class="in-stock">In Stock</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Category:</span>
+                <span id="productCategory">Handicrafts</span>
+              </div>
+            </div>
+
+            <div class="quantity-selector">
+              <button class="quantity-btn" id="decreaseQty">-</button>
+              <input
+                type="number"
+                class="quantity-input"
+                id="quantity"
+                value="1"
+                min="1"
+              />
+              <button class="quantity-btn" id="increaseQty">+</button>
+            </div>
+
+            <div class="action-buttons">
+              <button class="btn btn-primary" id="addToCartBtn">
+                <i class="fas fa-shopping-cart"></i> Get the Best Price
+              </button>
+              <button class="btn btn-primary" id="whatsappBtn">
+                <i class="fab fa-whatsapp"></i> WhatsApp Now
+              </button>
+            </div>
+
+            <div class="delivery-info">
+              <p>
+              <p><i class="fas fa-shield-alt"></i> 100% Authentic Products</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Description Tabs -->
+        <div class="product-tabs" style="margin-top: 50px">
+          <div
+            class="tabs"
+            style="border-bottom: 1px solid #ddd; margin-bottom: 20px"
+          >
+            <button class="tab-btn active" data-tab="description">
+              Description
+            </button>
+            <button class="tab-btn" data-tab="specifications">
+              Specifications
+            </button>
+            <button class="tab-btn" data-tab="reviews">Reviews</button>
+          </div>
+
+          <div
+            class="tab-content"
+            id="description"
+            style="display: block; padding: 20px 0"
+          >
+            <h3>Product Description</h3>
+            <div id="fullDescription"></div>
+          </div>
+
+          <div
+            class="tab-content"
+            id="specifications"
+            style="display: none; padding: 20px 0"
+          >
+            <h3>Product Specifications</h3>
+            <table
+              class="specs-table"
+              style="width: 100%; border-collapse: collapse; margin-top: 15px"
+            >
+              <tbody id="specsTable">
+                <!-- Specifications will be added by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="tab-content"
+            id="reviews"
+            style="display: none; padding: 20px 0"
+          >
+            <h3>Customer Reviews</h3>
+            <div id="reviewsContainer">
+              <p>No reviews yet. Be the first to review this product!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- You May Also Like Section -->
+        <div class="related-products" style="margin-top: 60px;">
+          <h2 style="text-align: center; margin-bottom: 30px; font-size: 28px; color: #333; position: relative; padding-bottom: 15px;">
+            You May Also Like
+            <span style="display: block; width: 80px; height: 3px; background: #d4af37; margin: 10px auto 0;"></span>
+          </h2>
+          <div class="related-products-container" style="display: flex; overflow-x: auto; gap: 20px; padding: 20px 0; margin: 0 15px;">
+            <!-- Related products will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer (Same as other pages) -->
+     <!-- Footer -->
+    <footer
+      style="
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d3436 100%);
+        color: white;
+        padding: 70px 20px 0;
+      "
+    >
+      <div class="container" style="max-width: 1200px; margin: 0 auto">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+          "
+        >
+          <!-- Brand Info -->
+          <div style="max-width: 300px">
+            <img
+              src="img/logo.png"
+              alt="SUPER GOLDSTAR Logo"
+              style="
+                height: 80px;
+                margin-bottom: 20px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+              "
+            />
+            <p
+              style="
+                color: #b3b3b3;
+                line-height: 1.6;
+                margin-bottom: 20px;
+                text-align: center;
+              "
+            >
+             Authentic craftsmanship, beautifully served.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 15px">
+              <a
+                href="https://www.facebook.com/share/1Fpt8cPSWv/"
+                style="
+                  color: #fff;
+                  font-size: 1.2rem;
+                  transition: all 0.3s ease;
+                "
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/vipinkumar12345670?igsh=MXdiYXZ6MXhkejlpcw=="
+                style="
+                  color: #fff;
+                  font-size: 1.2rem;
+                  transition: all 0.3s ease;
+                "
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/vipin-kumar-5a2273398?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                style="
+                  color: #fff;
+                  font-size: 1.2rem;
+                  transition: all 0.3s ease;
+                "
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3
+              style="
+                color: #fff;
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+                position: relative;
+                padding-bottom: 10px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Quick Links
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 50px;
+                  height: 2px;
+                  background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
+                "
+              ></span>
+            </h3>
+            <ul style="list-style: none; padding: 0; margin: 0">
+              <li style="margin-bottom: 12px">
+                <a
+                  href="index.html"
+                  style="
+                    color: #b3b3b3;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                  "
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="margin-right: 8px; font-size: 0.7rem; color: #ff6b6b"
+                  ></i>
+                  Home</a
+                >
+              </li>
+              <li style="margin-bottom: 12px">
+                <a
+                  href="products.html"
+                  style="
+                    color: #b3b3b3;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                  "
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="margin-right: 8px; font-size: 0.7rem; color: #ff6b6b"
+                  ></i>
+                  Shop</a
+                >
+              </li>
+              <li style="margin-bottom: 12px">
+                <a
+                  href="about.html"
+                  style="
+                    color: #b3b3b3;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                  "
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="margin-right: 8px; font-size: 0.7rem; color: #ff6b6b"
+                  ></i>
+                  About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  style="
+                    color: #b3b3b3;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                  "
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="margin-right: 8px; font-size: 0.7rem; color: #ff6b6b"
+                  ></i>
+                  Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h3
+              style="
+                color: #fff;
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+                position: relative;
+                padding-bottom: 10px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Contact Us
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 50px;
+                  height: 2px;
+                  background: linear-gradient(90deg, #4ecdc4, #66d9a0);
+                "
+              ></span>
+            </h3>
+            <ul style="list-style: none; padding: 0; margin: 0">
+              <li
+                style="
+                  margin-bottom: 20px;
+                  display: flex;
+                  align-items: flex-start;
+                "
+              >
+                <div
+                  style="
+                    background: rgba(255, 107, 107, 0.1);
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 15px;
+                    flex-shrink: 0;
+                  "
+                >
+                  <i
+                    class="fas fa-map-marker-alt"
+                    style="color: #ff6b6b; font-size: 1rem"
+                  ></i>
+                </div>
+                <div>
+                  <h4 style="color: #fff; margin: 0 0 5px 0; font-size: 1rem">
+                    Our Location
+                  </h4>
+                  <p
+                    style="
+                      color: #b3b3b3;
+                      margin: 0;
+                      font-size: 0.9rem;
+                      line-height: 1.5;
+                    "
+                  >
+                    H.NO-193 KRISHNA COLONY, JEONI MANDI, BELANGANJ, AGRA, AGRA,
+                    UTTAR PRADESH, 282004
+                  </p>
+                </div>
+              </li>
+              <li
+                style="
+                  margin-bottom: 20px;
+                  display: flex;
+                  align-items: flex-start;
+                "
+              >
+                <div
+                  style="
+                    background: rgba(78, 205, 196, 0.1);
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 15px;
+                    flex-shrink: 0;
+                  "
+                >
+                  <i
+                    class="fas fa-phone-alt"
+                    style="color: #4ecdc4; font-size: 1rem"
+                  ></i>
+                </div>
+                <div>
+                  <h4 style="color: #fff; margin: 0 0 5px 0; font-size: 1rem">
+                    Phone
+                  </h4>
+                  <p style="color: #b3b3b3; margin: 0; font-size: 0.9rem">
+                    +91 79836 82178
+                  </p>
+                  <a
+                    href="https://wa.me/917983682178"
+                    target="_blank"
+                    style="
+                      color: #4ecdc4;
+                      text-decoration: none;
+                      font-size: 0.9rem;
+                      display: inline-block;
+                      margin-top: 5px;
+                    "
+                  >
+                    <i class="fab fa-whatsapp"></i> WhatsApp Now
+                  </a>
+                </div>
+              </li>
+              <li style="display: flex; align-items: flex-start">
+                <div
+                  style="
+                    background: rgba(37, 211, 102, 0.1);
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 15px;
+                    flex-shrink: 0;
+                  "
+                >
+                  <i
+                    class="fas fa-envelope"
+                    style="color: #25d366; font-size: 1.2rem"
+                  ></i>
+                </div>
+                <div>
+                  <h4 style="color: #fff; margin: 0 0 5px 0; font-size: 1rem">
+                    Email
+                  </h4>
+                  <p style="color: #b3b3b3; margin: 0; font-size: 0.9rem">
+                    Vipinkumar@stylishwineglasses.com
+                  </p>
+                  <a
+                    href="mailto:Vipinkumar@stylishwineglasses.com"
+                    style="
+                      color: #ff6b6b;
+                      text-decoration: none;
+                      font-size: 0.9rem;
+                      display: inline-block;
+                      margin-top: 5px;
+                    "
+                  >
+                    <i class="fas fa-envelope"></i> Send Email
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div>
+            <h3
+              style="
+                color: #fff;
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+                position: relative;
+                padding-bottom: 10px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Newsletter
+              <span
+                style="
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 50px;
+                  height: 2px;
+                  background: linear-gradient(90deg, #f6d365, #fda085);
+                "
+              ></span>
+            </h3>
+            <p
+              style="
+                color: #b3b3b3;
+                margin-bottom: 20px;
+                font-size: 0.95rem;
+                line-height: 1.6;
+              "
+            >
+              Subscribe to our newsletter to receive updates on new products and
+              special offers.
+            </p>
+            <form style="margin-bottom: 25px">
+              <div style="position: relative; margin-bottom: 15px">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  style="
+                    width: 100%;
+                    padding: 12px 20px 12px 45px;
+                    border: none;
+                    border-radius: 30px;
+                    background: rgba(255, 255, 255, 0.1);
+                    color: #fff;
+                    font-size: 0.95rem;
+                    transition: all 0.3s ease;
+                  "
+                />
+                <i
+                  class="fas fa-envelope"
+                  style="
+                    position: absolute;
+                    left: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: #fda085;
+                  "
+                ></i>
+              </div>
+              <button
+                type="submit"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  background: linear-gradient(90deg, #f6d365, #fda085);
+                  border: none;
+                  border-radius: 30px;
+                  color: #1a1a1a;
+                  font-weight: 600;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-transform: uppercase;
+                  font-size: 0.9rem;
+                  letter-spacing: 1px;
+                "
+              >
+                Subscribe Now
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div
+          style="
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+          "
+        >
+          <div
+            style="
+              max-width: 1200px;
+              margin: 0 auto;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0 20px;
+              gap: 15px;
+            "
+          >
+            <p
+              style="
+                margin: 0;
+                color: #b3b3b3;
+                font-size: 0.9rem;
+                font-weight: 400;
+              "
+            >
+              &copy; 2023 SUPER GOLDSTAR MULTI LEVEL MARKETING PRIVATE LIMITED.
+              All Rights Reserved.
+            </p>
+            <a href="https://www.growwyou.com/" 
+           target="_blank" 
+           style="color: #fda085; 
+                  text-decoration: none; 
+                  font-size: 0.9rem;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  transition: all 0.3s ease;">
+            <span>Website by</span>
+            <span style="font-weight: 600; color: #f6d365;">Groww You</span>
+            <span>IT Solutions & Digital Marketing</span>
+        </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Enquiry Modal -->
+    <div id="enquiryModal" class="enquiry-modal">
+      <div class="enquiry-modal-content">
+        <span class="enquiry-close" id="enquiryCloseBtn">&times;</span>
+        <h2>Get the Best Price</h2>
+        <form id="enquiryForm">
+          <div class="form-group">
+            <label for="E-mail">E-mail:</label>
+            <input type="email" id="E-mail" name="E-mail" required>
+            <div class="form-error" id="errorName"></div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+            <div class="form-error" id="errorPhone"></div>
+          </div>
+          <div class="form-group">
+            <label for="enquiryProduct">Product:</label>
+            <input type="text" id="enquiryProduct" name="product" readonly>
+          </div>
+          <div class="form-group">
+            <label for="enquiryQty">Quantity:</label>
+            <input type="number" id="enquiryQty" name="quantity" readonly>
+            <div class="form-error" id="errorQty"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Get product ID from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get("id");
+
+      // Sample product data (in a real app, this would come from an API)
+      const products = [
+        {
+          id: 1,
+          title: "Handwoven Baskets",
+          price: 2499,
+          description:
+            "Beautiful handwoven baskets made with natural materials",
+          fullDescription:
+            '<p>Our handwoven baskets are crafted by skilled artisans using traditional techniques passed down through generations. Each basket is unique, featuring natural materials that are sustainably sourced. Perfect for home storage, these baskets add a touch of rustic charm to any space.</p><p>Dimensions: 12" x 12" x 8"</p><p>Material: Natural seagrass, jute, and cotton</p>',
+          category: "Home Decor",
+          images: ["img/unnamed.jpg", "img/pimg-2.png", "img/pimg-3.png"],
+          inStock: true,
+          specs: {
+            Material: "Natural seagrass, jute, cotton",
+            Dimensions: '12" x 12" x 8"',
+            Color: "Natural",
+            Weight: "0.5 kg",
+            Origin: "India",
+          },
+          related: [2, 3, 4],
+        },
+        {
+          id: 2,
+          title: "Ceramic Pottery",
+          price: 3999,
+          description: "Unique hand-thrown ceramic pieces for your home",
+          fullDescription:
+            "<p>Handcrafted ceramic pottery made using traditional wheel-throwing techniques. Each piece is unique, with its own character and charm. Perfect for both functional use and as decorative art pieces.</p><p>Dimensions: Varies by piece</p><p>Material: High-quality ceramic, food-safe glaze</p>",
+          category: "Home Decor",
+          images: ["img/pimg-2.png", "img/unnamed.jpg", "img/pimg-1.png"],
+          inStock: true,
+          specs: {
+            Material: "Ceramic",
+            Type: "Hand-thrown pottery",
+            Finish: "Glazed",
+            Care: "Hand wash recommended",
+            Origin: "India",
+          },
+          related: [1, 3, 5],
+        },
+        {
+          id: 3,
+          title: "Textile Art",
+          price: 1799,
+          description: "Hand-embroidered textiles with traditional patterns",
+          fullDescription:
+            "<p>Exquisite hand-embroidered textiles featuring traditional patterns and motifs. Each piece is a work of art, taking days or even weeks to complete. Perfect for wall hangings, table runners, or decorative throws.</p><p>Dimensions: Varies by piece</p><p>Material: Cotton fabric with silk/cotton thread</p>",
+          category: "Textiles",
+          images: ["img/img-1.jpg", "img/pimg-3.png", "img/unnamed.jpg"],
+          inStock: true,
+          specs: {
+            Material: "Cotton fabric, silk/cotton thread",
+            Technique: "Hand embroidery",
+            Care: "Dry clean only",
+            Origin: "India",
+          },
+          related: [1, 4, 6],
+        },
+        {
+          id: 4,
+          title: "Wooden Crafts",
+          price: 2799,
+          description: "Intricately carved wooden handicrafts",
+          fullDescription:
+            "<p>This export-quality drinking glass is made from high-quality borosilicate glass, known for its excellent clarity, strength, and resistance to heat and thermal shock. Its tall and attractive design, combined with a smooth stem and sturdy base, gives it a premium and modern appearance suitable for international markets. The crystal-clear finish enhances the presentation of beverages such as water, juice, mocktails, soft drinks, and other cold drinks. A smooth rim and well-balanced structure ensure comfortable handling and long-lasting durability. This glass is ideal for hotels, restaurants, cafés, gifting, and bulk export supply. Customization options including size, logo, design, and packaging are available with bulk orders.Minimum Order Quantity (MOQ): 1000 PiecesWe kindly request you to give us an opportunity to serve you.</p>",
+          category: "Home Decor",
+          images: ["img/pimg-3.png", "img/pimg-1.png", "img/unnamed.jpg"],
+          inStock: true,
+          specs: {
+            Material: "Sheesham wood, rosewood",
+            Finish: "Natural wood finish",
+            Care: "Dust with dry cloth, avoid direct sunlight",
+            Origin: "India",
+          },
+          related: [1, 2, 5],
+        },
+        {
+          id: 5,
+          title: "Metal Works",
+          price: 4499,
+          description: "Handcrafted metal sculptures and decorative items",
+          fullDescription:
+            "<p>Stunning metal art pieces created using traditional metalworking techniques. Each sculpture is handcrafted by skilled artisans, making it a unique addition to any space.</p><p>Dimensions: Varies by piece</p><p>Material: Brass, copper, iron</p>",
+          category: "Sculptures",
+          images: ["img/img-9.jpg", "img/pimg-2.png", "img/unnamed.jpg"],
+          inStock: true,
+          specs: {
+            Material: "Brass, copper, iron",
+            Finish: "Antique, polished, or oxidized",
+            Care: "Polish with dry cloth",
+            Origin: "India",
+          },
+          related: [2, 4, 6],
+        },
+        {
+          id: 6,
+          title: "Handmade Jewelry",
+          price: 1499,
+          description: "Elegant jewelry crafted by skilled artisans",
+          fullDescription:
+            "<p>Beautiful handmade jewelry featuring traditional designs and semi-precious stones. Each piece is carefully crafted by skilled jewelers using age-old techniques.</p><p>Materials: Silver, gold-plated, semi-precious stones</p><p>Care: Store in a dry place, avoid contact with water and chemicals</p>",
+          category: "Jewelry",
+          images: ["img/pimg-1.png", "img/unnamed.jpg", "img/pimg-3.png"],
+          inStock: true,
+          specs: {
+            Material: "Silver, gold-plated, semi-precious stones",
+            Type: "Necklaces, earrings, bracelets",
+            Care: "Store in a dry place, avoid water and chemicals",
+            Origin: "India",
+          },
+          related: [1, 3, 5],
+        },
+         {
+          id: 8,
+          title: "Stone Sculptures",
+          price: 5499,
+          description: "Stunning stone sculptures carved by master artisans",
+          fullDescription:
+            "<p>This premium drinking glass is made from high-quality borosilicate glass, known for its excellent clarity, strength, and resistance to heat and thermal shock. Manufactured in accordance with international export standards, it features a smooth finish and an elegant transparent appearance suitable for overseas markets. The key highlight of this glass is the handcrafted glass heart design inside, carefully shaped by skilled artisans. This inner glass artwork adds a unique, artistic, and premium appeal, making each piece truly distinctive. The glass is suitable for serving both hot and cold beverages such as water, juice, tea, coffee, and cocktails. Customization options are available with bulk orders, including design, logo, and packaging. The minimum order quantity is 1000 pieces.Please give us an opportunity to serve you once.</p>",
+          category: "Sculptures",
+          images: ["img/img-10.jpg"],
+          inStock: true,
+          specs: {
+            Material: "Natural stone",
+            Dimensions: "Varies by sculpture",
+            Weight: "Approx. 1.2 kg",
+            Origin: "India",
+          },
+          related: [1, 2, 4],
+        },
+        {
+          id: 9,
+          title: "Glass Art",
+          price: 3999,
+          description: "Beautiful glass art pieces for decoration",
+          fullDescription:
+            "<p>Elegant glass art crafted with precision and artistry, perfect for enhancing your home decor. Each piece reflects a blend of modern design and timeless craftsmanship.</p>",
+          category: "Decor",
+          images: ["img/img55.webp"],
+          inStock: true,
+          specs: {
+            Material: "High-quality glass",
+            Dimensions: "Varies by design",
+            Weight: "Approx. 0.4 kg",
+            Origin: "India",
+          },
+          related: [2, 3, 4],
+        },
+        {
+          id: 10,
+          title: "Bamboo Products",
+          price: 1799,
+          description: "Eco-friendly bamboo products for sustainable living",
+          fullDescription:
+            "<p>Eco-conscious bamboo products designed for sustainability and style. Ideal for those seeking environmentally friendly decor solutions.</p>",
+          category: "Eco Decor",
+          images: ["img/pimg-4.webp"],
+          inStock: true,
+          specs: {
+            Material: "Natural bamboo",
+            Dimensions: "Varies by product",
+            Weight: "Approx. 0.3 kg",
+            Origin: "India",
+          },
+          related: [1, 3, 5],
+        },
+        {
+          id: 11,
+          title: "Metal Crafts",
+          price: 3299,
+          description: "Handcrafted metal decorative items",
+          fullDescription:
+            "<p>Handcrafted metal crafts featuring intricate designs and durable finishes. Perfect for adding an artistic touch to any room.</p>",
+          category: "Metal Art",
+          images: ["img/pimg-5.webp"],
+          inStock: true,
+          specs: {
+            Material: "Brass, copper, iron",
+            Finish: "Polished/Antique",
+            Weight: "Approx. 0.6 kg",
+            Origin: "India",
+          },
+          related: [1, 2, 4],
+        },
+        {
+          id: 12,
+          title: "Traditional Paintings",
+          price: 4999,
+          description: "Traditional paintings with authentic cultural themes",
+          fullDescription:
+            "<p>Authentic traditional paintings that capture the essence of cultural heritage. Each painting is a statement piece for art lovers.</p>",
+          category: "Art",
+          images: ["img/pimg-6.webp"],
+          inStock: true,
+          specs: {
+            Material: "Canvas, oil/acrylic paints",
+            Dimensions: "Varies by artwork",
+            Origin: "India",
+          },
+          related: [1, 3, 5],
+        },
+       
+      ];
+
+      // Find the current product
+      const product =
+        products.find((p) => p.id === parseInt(productId)) || products[0];
+
+      // Update the page with product data
+      document.addEventListener("DOMContentLoaded", function () {
+        // Update product info
+        document.getElementById("productTitle").textContent = product.title;
+        document.getElementById(
+          "productPrice"
+        ).textContent = `₹${product.price.toLocaleString()}`;
+        document.getElementById("productDescription").textContent =
+          product.description;
+        document.getElementById("fullDescription").innerHTML =
+          product.fullDescription || product.description;
+
+        // Update main image
+        const mainImage = document.getElementById("mainImage");
+        if (product.images && product.images.length > 0) {
+          mainImage.src = product.images[0];
+
+          // Add thumbnails
+          const thumbnailContainer =
+            document.getElementById("thumbnailContainer");
+          product.images.forEach((img, index) => {
+            const thumb = document.createElement("img");
+            thumb.src = img;
+            thumb.className = "thumbnail" + (index === 0 ? " active" : "");
+            thumb.onclick = () => {
+              mainImage.src = img;
+              document
+                .querySelectorAll(".thumbnail")
+                .forEach((t) => t.classList.remove("active"));
+              thumb.classList.add("active");
+            };
+            thumbnailContainer.appendChild(thumb);
+          });
+        }
+
+        // Update stock status
+        const stockElement = document.getElementById("productStock");
+        stockElement.textContent = product.inStock
+          ? "In Stock"
+          : "Out of Stock";
+        stockElement.style.color = product.inStock ? "#27ae60" : "#e74c3c";
+
+        // Display related products
+        const relatedProductsContainer = document.querySelector('.related-products-container');
+        if (product.related && product.related.length > 0) {
+          // Get related products
+          const relatedProducts = product.related.map(id => 
+            products.find(p => p.id === id)
+          ).filter(Boolean);
+
+          // Display up to 4 related products
+          const relatedToShow = relatedProducts.slice(0, 4);
+          
+          relatedProductsContainer.innerHTML = relatedToShow.map(relatedProduct => `
+            <div class="related-product-card" style="
+              min-width: 250px;
+              background: white;
+              border-radius: 8px;
+              overflow: hidden;
+              box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+              transition: transform 0.3s ease, box-shadow 0.3s ease;
+            ">
+              <a href="product-detail.html?id=${relatedProduct.id}" style="text-decoration: none; color: inherit;">
+                <div style="height: 200px; overflow: hidden;">
+                  <img 
+                    src="${relatedProduct.images[0]}" 
+                    alt="${relatedProduct.title}" 
+                    style="width: 100%; height: 100%; object-fit: cover;"
+                  >
+                </div>
+                <div style="padding: 15px;">
+                  <h3 style="margin: 0 0 10px 0; font-size: 16px; color: #333; font-weight: 600;">
+                    ${relatedProduct.title}
+                  </h3>
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 18px; font-weight: 700; color: #d4af37;">₹${relatedProduct.price.toLocaleString()}</span>
+                    <span style="font-size: 12px; color: #28a745;">
+                      <i class="fas fa-check-circle"></i> In Stock
+                    </span>
+                  </div>
+                  <div style="margin-top: 10px; display: flex; align-items: center;">
+                    <div style="color: #ffc107;">
+                      ${'<i class="fas fa-star"></i>'.repeat(5)}
+                    </div>
+                    <span style="font-size: 12px; color: #666; margin-left: 5px;">(12)</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          `).join('');
+
+          // Add hover effect
+          const cards = document.querySelectorAll('.related-product-card');
+          cards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+              card.style.transform = 'translateY(-5px)';
+              card.style.boxShadow = '0 5px 15px rgba(0,0,0,0.15)';
+            });
+            card.addEventListener('mouseout', () => {
+              card.style.transform = 'translateY(0)';
+              card.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            });
+          });
+        }
+
+        // Update category
+        document.getElementById("productCategory").textContent =
+          product.category || "Handicrafts";
+
+        // Update specifications
+        const specsTable = document.getElementById("specsTable");
+        if (product.specs) {
+          specsTable.innerHTML = "";
+          for (const [key, value] of Object.entries(product.specs)) {
+            const row = document.createElement("tr");
+            row.style.borderBottom = "1px solid #eee";
+            row.innerHTML = `
+                        <td style="padding: 10px; font-weight: 600; width: 150px;">${key}</td>
+                        <td style="padding: 10px;">${value}</td>
+                    `;
+            specsTable.appendChild(row);
+          }
+        }
+
+        // Quantity controls
+        const quantityInput = document.getElementById("quantity");
+        document.getElementById("increaseQty").addEventListener("click", () => {
+          quantityInput.value = parseInt(quantityInput.value) + 1;
+        });
+        document.getElementById("decreaseQty").addEventListener("click", () => {
+          if (parseInt(quantityInput.value) > 1) {
+            quantityInput.value = parseInt(quantityInput.value) - 1;
+          }
+        });
+
+        // Add to cart button
+        document
+          .getElementById("addToCartBtn")
+          .addEventListener("click", () => {
+            // Only open the enquiry modal, do not show alert
+            // alert removed
+            // Here you would typically add to cart functionality
+          });
+
+        // Call now button
+        document.getElementById("buyNowBtn").addEventListener("click", () => {
+          window.location.href = "tel:+1234567890";
+        });
+
+        // Tab functionality
+        const tabBtns = document.querySelectorAll(".tab-btn");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            // Remove active class from all buttons and hide all contents
+            tabBtns.forEach((b) => b.classList.remove("active"));
+            tabContents.forEach((c) => (c.style.display = "none"));
+
+            // Add active class to clicked button and show corresponding content
+            btn.classList.add("active");
+            const tabId = btn.getAttribute("data-tab");
+            document.getElementById(tabId).style.display = "block";
+          });
+        });
+
+        // Load related products (simplified example)
+        const relatedProducts = products.filter((p) =>
+          product.related.includes(p.id)
+        );
+        const relatedContainer = document.getElementById("relatedProducts");
+
+        if (relatedProducts.length > 0) {
+          relatedContainer.innerHTML = relatedProducts
+            .map(
+              (p) => `
+                    <div class="product-card" data-product-id="${
+                      p.id
+                    }" style="cursor: pointer;" onclick="window.location.href='product-detail.html?id=${
+                p.id
+              }'">
+                        <div class="product-image">
+                            <img src="${
+                              p.images?.[0] || "img/placeholder.jpg"
+                            }" alt="${p.title}">
+                        </div>
+                        <div style="padding: 1rem; padding-bottom: 0.5rem; text-align: left;">
+                            <h3 style="margin: 0 0 0.3rem 0;">${p.title}</h3>
+                            <p class="price" style="margin: 0; text-align: left;">₹${p.price.toLocaleString()}</p>
+                        </div>
+                        <p class="description" style="padding: 0 1rem; margin: 0.5rem 0; font-size: 0.9rem; text-align: left;">${
+                          p.description
+                        }</p>
+                    </div>
+                `
+            )
+            .join("");
+        }
+      });
+    </script>
+    <script>
+      // Enquiry Modal Logic
+      const enquiryModal = document.getElementById('enquiryModal');
+      const enquiryBtn = document.getElementById('addToCartBtn');
+      const enquiryCloseBtn = document.getElementById('enquiryCloseBtn');
+      const enquiryForm = document.getElementById('enquiryForm');
+      const enquiryProduct = document.getElementById('enquiryProduct');
+      const enquiryQty = document.getElementById('enquiryQty');
+      const errorName = document.getElementById('errorName');
+      const errorPhone = document.getElementById('errorPhone');
+      const errorQty = document.getElementById('errorQty');
+
+      // Open modal and autofill fields
+      enquiryBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        enquiryProduct.value = product.title;
+        enquiryQty.value = document.getElementById('quantity').value;
+        enquiryModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+      // Close modal
+      enquiryCloseBtn.onclick = function() {
+        enquiryModal.style.display = 'none';
+        document.body.style.overflow = '';
+        enquiryForm.reset();
+        errorName.textContent = '';
+        errorPhone.textContent = '';
+        errorQty.textContent = '';
+      }
+      window.onclick = function(event) {
+        if (event.target === enquiryModal) {
+          enquiryModal.style.display = 'none';
+          document.body.style.overflow = '';
+          enquiryForm.reset();
+          errorName.textContent = '';
+          errorPhone.textContent = '';
+          errorQty.textContent = '';
+        }
+      }
+      // Validation helper
+      function validateEnquiryForm() {
+        let valid = true;
+        errorName.textContent = '';
+        errorPhone.textContent = '';
+        errorQty.textContent = '';
+        // Name
+        const name = enquiryForm.name.value.trim();
+        if (!name) {
+          errorName.textContent = 'Name is required.';
+          valid = false;
+        }
+        // Phone
+        const phone = enquiryForm.phone.value.trim();
+        if (!phone) {
+          errorPhone.textContent = 'Phone is required.';
+          valid = false;
+        } else if (!/^[0-9]{10,15}$/.test(phone)) {
+          errorPhone.textContent = 'Enter a valid phone number.';
+          valid = false;
+        }
+        // Quantity
+        const qty = enquiryForm.quantity.value;
+        if (!qty || isNaN(qty) || parseInt(qty) < 1) {
+          errorQty.textContent = 'Enter a valid quantity.';
+          valid = false;
+        }
+        return valid;
+      }
+      // Handle form submit
+      enquiryForm.onsubmit = function(ev) {
+        ev.preventDefault();
+        if (validateEnquiryForm()) {
+          enquiryModal.style.display = 'none';
+          document.body.style.overflow = '';
+          alert('Thank you for your enquiry! We will contact you soon.');
+          enquiryForm.reset();
+        }
+      }
+    </script>
+    <script src="script.js"></script>
+    <script>
+      // Initialize navbar functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof initNavbar === 'function') {
+          initNavbar();
+        }
+      });
+    </script>
+  </body>
+</html>

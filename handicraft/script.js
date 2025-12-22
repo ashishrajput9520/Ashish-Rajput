@@ -299,8 +299,8 @@ function initApp() {
                 <div class="gallery-product-info">
                     <h3>${p.name}</h3>
                     <p class="price">₹${p.price}</p>
-                    <button class="btn btn-secondary" onclick="addProductToCart(${p.id})">Add to Cart</button>
-                    <button class="btn btn-primary" onclick="buyNow(${p.id})" style="margin-top: 0.5rem;">Buy Now</button>
+                    <button class="btn btn-secondary" onclick="addProductToCart(${p.id})">Get the Best Price</button>
+                    <button class="btn btn-primary" onclick="window.location.href='tel:+1234567890'" style="margin-top: 0.5rem;">Call Now</button>
                 </div>
             </div>
         `).join('');
@@ -329,13 +329,8 @@ function initApp() {
             addToCart(productId);
         }
         if (e.target.classList.contains('buy-now')) {
-            const productId = parseInt(e.target.getAttribute('data-product-id'));
-            addToCart(productId);
-            setTimeout(() => {
-                cartModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                closeGallery();
-            }, 300);
+            e.preventDefault();
+            window.location.href = 'tel:+1234567890';
         }
     });
 
