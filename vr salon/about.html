@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us - VR Beauty Salon</title>
+  <meta name="description" content="Learn about VR Beauty Salon - Our story, mission, and the team behind your beauty transformation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="salon.css">
+  <style>
+    .about-container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .back-to-home {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .about-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    .about-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .about-text h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .about-text h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-2);
+    }
+    .team-section {
+      margin-top: 80px;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .team-member {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+    .team-image {
+      height: 300px;
+      overflow: hidden;
+    }
+    .team-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .team-member:hover .team-image img {
+      transform: scale(1.05);
+    }
+    .team-info {
+      padding: 20px;
+      text-align: center;
+    }
+    .team-info h4 {
+      margin: 0 0 5px;
+      color: var(--text);
+    }
+    .team-info p {
+      margin: 0;
+      color: var(--muted);
+    }
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      .about-image {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a class="brand" href="vr beauty salon.html" aria-label="VR Beauty Salon home">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="img/img-2.png" alt="VR Beauty Salon Logo" style="height: 70px;">
+        </span>
+        <span class="brand-name">VR BeautY Salon</span>
+      </a>
+      <div class="links">
+        <a href="vr beauty salon.html#home" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a class="btn" href="contact.html">Book Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="about-container">
+    <a href="vr beauty salon.html" class="back-to-home">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back to Home
+    </a>
+
+    <div class="about-header">
+      <h1>About VR Beauty Salon</h1>
+      <p class="section-sub">Where beauty meets perfection</p>
+    </div>
+
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Our Story</h2>
+        <p>Founded in 2020, VR Beauty Salon has been at the forefront of beauty and wellness, providing exceptional services to our valued clients. What started as a small beauty parlor has now grown into a premier beauty destination known for its excellence and commitment to quality.</p>
+        <p>Our journey has been one of passion, dedication, and continuous learning. We believe in staying updated with the latest trends and techniques in the beauty industry to provide our clients with nothing but the best.</p>
+        
+        <h2 style="margin-top: 30px;">Our Mission</h2>
+        <p>At VR Beauty Salon, our mission is to enhance your natural beauty and boost your confidence through our professional services. We strive to create a welcoming and relaxing environment where every client feels special and pampered.</p>
+        
+        <h2 style="margin-top: 30px;">Why Choose Us?</h2>
+        <ul style="padding-left: 20px;">
+          <li>Experienced and certified professionals</li>
+          <li>High-quality, premium products</li>
+          <li>Personalized services tailored to your needs</li>
+          <li>Hygienic and safe environment</li>
+          <li>Affordable luxury</li>
+        </ul>
+      </div>
+      
+      <div class="about-image">
+        <img src="img/gallery-1.jpg" alt="VR Beauty Salon Interior">
+      </div>
+    </div>
+
+    <div class="team-section">
+      <h2 class="section-title" style="text-align: center;">Meet Our Team</h2>
+      <p class="section-sub" style="text-align: center;">Our talented team of beauty experts</p>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-image">
+            <img src="img/gallery-2.jpg" alt="Beauty Expert">
+          </div>
+          <div class="team-info">
+            <h4>Priya Sharma</h4>
+            <p>Master Stylist</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <div class="team-image">
+            <img src="img/gallery-3.jpg" alt="Beauty Expert">
+          </div>
+          <div class="team-info">
+            <h4>Rahul Verma</h4>
+            <p>Color Specialist</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <div class="team-image">
+            <img src="img/gallery-4.jpg" alt="Beauty Expert">
+          </div>
+          <div class="team-info">
+            <h4>Anjali Patel</h4>
+            <p>Skin Care Expert</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta" style="text-align: center; margin: 80px 0 40px;">
+      <h2>Ready to experience the VR Beauty difference?</h2>
+      <p>Book your appointment today and let us take care of your beauty needs.</p>
+      <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Book Now</a>
+    </div>
+  </div>
+
+  <footer>
+    © <span id="year"></span> VR Beauty Salon · All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

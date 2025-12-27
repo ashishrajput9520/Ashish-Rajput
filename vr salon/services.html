@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Services - VR Beauty Salon</title>
+  <meta name="description" content="Explore our premium beauty services at VR Beauty Salon - Hair, Skin, Nails, and Bridal services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="salon.css">
+  <style>
+    .services-container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .back-to-home {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .service-category {
+      margin-bottom: 50px;
+    }
+    .service-category h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .service-category h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-2);
+    }
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .service-card .card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .service-content {
+      flex: 1;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .service-header .icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .service-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0;
+    }
+    .service-price {
+      font-size: 16px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+    .service-description {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 20px 0;
+      flex-grow: 1;
+    }
+    .service-button {
+      padding: 0 24px 24px;
+      text-align: center;
+    }
+    .service-button .btn {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .service-card {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .service-content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a class="brand" href="vr beauty salon.html" aria-label="VR Beauty Salon home">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="img/img-2.png" alt="VR Beauty Salon Logo" style="height: 70px;">
+        </span>
+        <span class="brand-name">VR BeautY Salon</span>
+      </a>
+      <div class="links">
+        <a href="vr beauty salon.html#home" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a class="btn" href="contact.html">Book Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="services-container">
+    <a href="vr beauty salon.html" class="back-to-home">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back to Home
+    </a>
+    <h1>Our Services</h1>
+    <p class="section-sub">Experience the best in beauty and wellness with our premium services</p>
+    
+    <div class="service-category">
+      <h2>Hair Services</h2>
+      <div class="grid grid-3">
+        <div class="service-card">
+          <div class="card">
+            <div class="service-content">
+              <div class="service-header">
+                <div class="icon">💇‍♀️</div>
+                <h3 class="service-title">Cut & Style</h3>
+                <span class="service-price">from Rs. 1000</span>
+              </div>
+              <p class="service-description">Professional haircuts and styling to suit your face shape and personal style.</p>
+            </div>
+            <div class="service-button">
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card">
+            <div class="service-content">
+              <div class="service-header">
+                <div class="icon">🎨</div>
+                <h3 class="service-title">Color & Highlights</h3>
+                <span class="service-price">from Rs. 2500</span>
+              </div>
+              <p>Transform your look with our professional coloring and highlighting services.</p>
+            </div>
+            <div class="service-button">
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card">
+            <div class="service-content">
+              <div class="service-header">
+                <div class="icon">🧖‍♀️</div>
+                <h3 class="service-title">Hair Treatments</h3>
+                <span class="service-price">from Rs. 1500</span>
+              </div>
+              <p>Nourish and repair your hair with our specialized treatments.</p>
+            </div>
+            <div class="service-button">
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-category">
+      <h2>Skin Care</h2>
+      <div class="grid grid-3">
+        <div class="service-card">
+          <div class="card">
+            <div class="service-content">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom: 15px;">
+                <div class="icon">💆‍♀️</div>
+                <strong>Facial Treatments</strong>
+                <span class="price">from Rs. 2000</span>
+              </div>
+              <p>Rejuvenate your skin with our customized facial treatments.</p>
+            </div>
+            <div class="service-button">
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card">
+            <div class="service-content">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom: 15px;">
+                <div class="icon">✨</div>
+                <strong>Skin Brightening</strong>
+                <span class="price">from Rs. 3000</span>
+              </div>
+              <p>Get radiant, glowing skin with our brightening treatments.</p>
+            </div>
+            <div class="service-button">
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card">
+            <div class="service-content">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom: 15px;">
+                <div class="icon">🌿</div>
+                <strong>Organic Facials</strong>
+                <span class="price">from Rs. 2500</span>
+              </div>
+              <p>Natural and organic treatments for sensitive skin.</p>
+            </div>
+            <div class="service-button">
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-category">
+      <h2>Nail Care</h2>
+      <div class="grid grid-3">
+        <div class="service-card">
+          <div class="card">
+            <div class="service-content">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom: 15px;">
+                <div class="icon">💅</div>
+                <strong>Manicure</strong>
+                <span class="price">from Rs. 800</span>
+              </div>
+              <p>Classic and spa manicures for beautiful hands.</p>
+            </div>
+            <div class="service-button">
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card">
+            <div class="service-content">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom: 15px;">
+                <div class="icon">👢</div>
+                <strong>Pedicure</strong>
+                <span class="price">from Rs. 1200</span>
+              </div>
+              <p>Relaxing pedicures to pamper your feet.</p>
+            </div>
+            <div class="service-button">
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card">
+            <div class="service-content">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom: 15px;">
+                <div class="icon">🌟</div>
+                <strong>Nail Art</strong>
+                <span class="price">from Rs. 500</span>
+              </div>
+              <p>Creative nail art designs to express your style.</p>
+            </div>
+            <div class="service-button">
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-category">
+      <h2>Bridal Packages</h2>
+      <div class="grid grid-3">
+        <div class="service-card">
+          <div class="card">
+            <div class="service-content">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom: 15px;">
+                <div class="icon">👰</div>
+                <strong>Bridal Makeup</strong>
+                <span class="price">from Rs. 8000</span>
+              </div>
+              <p>Complete bridal makeup for your special day.</p>
+            </div>
+            <div class="service-button">
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card">
+            <div class="service-content">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom: 15px;">
+                <div class="icon">💇‍♀️</div>
+                <strong>Bridal Hairstyling</strong>
+                <span class="price">from Rs. 5000</span>
+              </div>
+              <p>Elegant hairstyles to complement your bridal look.</p>
+            </div>
+            <div class="service-button">
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="card">
+            <div class="service-content">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom: 15px;">
+                <div class="icon">💐</div>
+                <strong>Complete Package</strong>
+                <span class="price">from Rs. 20000</span>
+              </div>
+              <p>Complete bridal package including makeup, hair, and trials.</p>
+            </div>
+            <div class="service-button">
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta" style="text-align: center; margin-top: 50px;">
+      <h2>Ready to experience our services?</h2>
+      <p>Book your appointment today and let us pamper you.</p>
+      <a href="contact.html" class="btn btn-primary">Book Now</a>
+    </div>
+  </div>
+
+  <footer>
+    © <span id="year"></span> VR Beauty Salon · All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -13,28 +13,129 @@
 <body>
   <header class="header">
     <nav class="nav">
-      <a class="brand" href="#home" aria-label="VR Beauty Salon home">
-        <span class="" aria-hidden="true"><img src="img/vr logo salon 2.png" alt="" style="height: 70px;"></span>
+      <a class="brand" href="vr beauty salon.html" aria-label="VR Beauty Salon home">
+        <span class="brand-logo" aria-hidden="true">
+          <img src="img/img-2.png" alt="VR Beauty Salon Logo" style="height: 70px;">
+        </span>
         <span class="brand-name">VR BeautY Salon</span>
       </a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
       <div class="links">
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#gallery" class="nav-link">Gallery</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#testimonials" class="nav-link">Reviews</a>
-        <a class="btn" href="#contact">Book Now</a>
+        <a href="vr beauty salon.html#home" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a class="btn" href="contact.html">Book Now</a>
       </div>
     </nav>
   </header>
 
+  <style>
+    /* Mobile Menu Styles */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      
+      .nav .links.active {
+        display: flex;
+      }
+      
+      .nav .links a {
+        margin: 10px 0;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        text-align: center;
+      }
+      
+      .nav .links a:last-child {
+        border-bottom: none;
+      }
+      
+      .nav .links .btn {
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+      }
+    }
+    
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 80px 0;
+    }
+    .hero-content {
+      padding: 20px;
+    }
+    .hero-image {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-content {
+        order: 1;
+      }
+      .hero-image {
+        order: 2;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+  </style>
   <main id="home" class="hero">
-    <div>
+    <div class="hero-content">
       <div class="eyebrow">Beauty • Hair • Skin</div>
       <h1>Feel radiant. Walk confident.</h1>
       <p class="subtitle">Discover a sanctuary of style and self‑care. From precision cuts and luminous color to calming skin rituals, our artists craft looks that feel unmistakably you.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="#contact">Book a Free Consultation</a>
+        <a class="btn btn-primary" href="contact.html">Book a Free Consultation</a>
         <a class="btn btn-outline" href="#services">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="img/hero-image.jpg" alt="VR Beauty Salon Services">
       </div>
     </div>
     <div class="hero-card" aria-hidden="true">
@@ -349,6 +450,35 @@
     }
 
     document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menuLinks = document.querySelector('.nav .links');
+      
+      menuToggle.addEventListener('click', function() {
+        menuLinks.classList.toggle('active');
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!event.target.closest('.nav') && menuLinks.classList.contains('active')) {
+          menuLinks.classList.remove('active');
+        }
+      });
+      
+      // Close menu when a link is clicked
+      document.querySelectorAll('.nav .links a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuLinks.classList.remove('active');
+        });
+      });
+      
+      // Update year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
   </script>
 </body>
 </html>
