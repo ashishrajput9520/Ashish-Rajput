@@ -137,6 +137,59 @@
     </nav>
   </header>
 
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Book an Appointment</h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="service">Service</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option value="Cut & Style">Cut & Style</option>
+            <option value="Color & Highlights">Color & Highlights</option>
+            <option value="Hair Treatments">Hair Treatments</option>
+            <option value="Facial Treatments">Facial Treatments</option>
+            <option value="Skin Brightening">Skin Brightening</option>
+            <option value="Organic Facials">Organic Facials</option>
+            <option value="Manicure">Manicure</option>
+            <option value="Pedicure">Pedicure</option>
+            <option value="Nail Art">Nail Art</option>
+            <option value="Bridal Makeup">Bridal Makeup</option>
+            <option value="Bridal Hairstyling">Bridal Hairstyling</option>
+            <option value="Complete Package">Complete Package</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Preferred Time</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Additional Notes</label>
+          <textarea id="message" name="message" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Book Appointment</button>
+      </form>
+    </div>
+  </div>
+
   <div class="services-container">
     <a href="vr beauty salon.html" class="back-to-home">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -162,7 +215,7 @@
               <p class="service-description">Professional haircuts and styling to suit your face shape and personal style.</p>
             </div>
             <div class="service-button">
-              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+              <button class="btn btn-primary book-now-btn" style="width: 100%;">Book Now</button>
             </div>
           </div>
         </div>
@@ -177,7 +230,7 @@
               <p>Transform your look with our professional coloring and highlighting services.</p>
             </div>
             <div class="service-button">
-              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+              <button class="btn btn-primary book-now-btn" style="width: 100%;">Book Now</button>
             </div>
           </div>
         </div>
@@ -192,7 +245,7 @@
               <p>Nourish and repair your hair with our specialized treatments.</p>
             </div>
             <div class="service-button">
-              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+              <button class="btn btn-primary book-now-btn" style="width: 100%;">Book Now</button>
             </div>
           </div>
         </div>
@@ -213,7 +266,7 @@
               <p>Rejuvenate your skin with our customized facial treatments.</p>
             </div>
             <div class="service-button">
-              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+              <button class="btn btn-primary book-now-btn" style="width: 100%;">Book Now</button>
             </div>
           </div>
         </div>
@@ -228,7 +281,7 @@
               <p>Get radiant, glowing skin with our brightening treatments.</p>
             </div>
             <div class="service-button">
-              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+              <button class="btn btn-primary book-now-btn" style="width: 100%;">Book Now</button>
             </div>
           </div>
         </div>
@@ -243,7 +296,7 @@
               <p>Natural and organic treatments for sensitive skin.</p>
             </div>
             <div class="service-button">
-              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+              <button class="btn btn-primary book-now-btn" style="width: 100%;">Book Now</button>
             </div>
           </div>
         </div>
@@ -264,7 +317,7 @@
               <p>Classic and spa manicures for beautiful hands.</p>
             </div>
             <div class="service-button">
-              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+              <button class="btn btn-primary book-now-btn" style="width: 100%;">Book Now</button>
             </div>
           </div>
         </div>
@@ -279,7 +332,7 @@
               <p>Relaxing pedicures to pamper your feet.</p>
             </div>
             <div class="service-button">
-              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+              <button class="btn btn-primary book-now-btn" style="width: 100%;">Book Now</button>
             </div>
           </div>
         </div>
@@ -294,7 +347,7 @@
               <p>Creative nail art designs to express your style.</p>
             </div>
             <div class="service-button">
-              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+              <button class="btn btn-primary book-now-btn" style="width: 100%;">Book Now</button>
             </div>
           </div>
         </div>
@@ -315,7 +368,7 @@
               <p>Complete bridal makeup for your special day.</p>
             </div>
             <div class="service-button">
-              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+              <button class="btn btn-primary book-now-btn" style="width: 100%;">Book Now</button>
             </div>
           </div>
         </div>
@@ -330,7 +383,7 @@
               <p>Elegant hairstyles to complement your bridal look.</p>
             </div>
             <div class="service-button">
-              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+              <button class="btn btn-primary book-now-btn" style="width: 100%;">Book Now</button>
             </div>
           </div>
         </div>
@@ -345,7 +398,7 @@
               <p>Complete bridal package including makeup, hair, and trials.</p>
             </div>
             <div class="service-button">
-              <a href="contact.html" class="btn btn-primary" style="display: inline-block; width: 100%; text-align: center;">Book Now</a>
+              <button class="btn btn-primary book-now-btn" style="width: 100%;">Book Now</button>
             </div>
           </div>
         </div>
@@ -363,8 +416,153 @@
     © <span id="year"></span> VR Beauty Salon · All rights reserved.
   </footer>
 
+  <style>
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .modal.show {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
+    }
+    
+    .modal-content {
+      background: var(--bg);
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: modalFadeIn 0.3s ease;
+    }
+    
+    @keyframes modalFadeIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--text);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--card);
+      color: var(--text);
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 95%;
+        padding: 20px 15px;
+      }
+    }
+  </style>
+  
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Modal functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('bookingModal');
+      const bookNowBtns = document.querySelectorAll('.book-now-btn');
+      const closeModal = document.querySelector('.close-modal');
+      const bookingForm = document.getElementById('bookingForm');
+      
+      // Open modal when Book Now is clicked
+      bookNowBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const serviceCard = this.closest('.service-card');
+          if (serviceCard) {
+            const serviceName = serviceCard.querySelector('.service-title').textContent;
+            const serviceSelect = document.getElementById('service');
+            serviceSelect.value = serviceName;
+          }
+          modal.classList.add('show');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      
+      // Close modal when X is clicked
+      closeModal.addEventListener('click', function() {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      });
+      
+      // Close modal when clicking outside the modal content
+      window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          modal.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+      });
+      
+      // Handle form submission
+      bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Here you would typically send the form data to a server
+        alert('Appointment booked successfully! We will contact you soon to confirm.');
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+        this.reset();
+      });
+      
+      // Set min date to today
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('date').min = today;
+      
+      // Update year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
   </script>
 </body>
 </html>
