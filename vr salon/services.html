@@ -127,8 +127,15 @@
         </span>
         <span class="brand-name">VR BeautY Salon</span>
       </a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
       <div class="links">
-        <a href="vr beauty salon.html#home" class="nav-link">Home</a>
+        <a href="vr beauty salon.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link active">Services</a>
         <a href="gallery.html" class="nav-link">Gallery</a>
         <a href="about.html" class="nav-link">About</a>
@@ -413,7 +420,7 @@
   </div>
 
   <footer>
-    © <span id="year"></span> VR Beauty Salon · All rights reserved.
+    &copy; <span id="year"></span> VR Beauty Salon &middot; All rights reserved.
   </footer>
 
   <style>
@@ -502,7 +509,48 @@
       min-height: 100px;
     }
     
+    /* Mobile Menu Styles */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1001;
+    }
+    
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      
+      .nav .links.active {
+        display: flex;
+      }
+      
+      .nav .links a {
+        margin: 10px 0;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        text-align: center;
+      }
+      
       .modal-content {
         width: 95%;
         padding: 20px 15px;
@@ -562,6 +610,43 @@
       
       // Update year in footer
       document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
+  <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menuLinks = document.querySelector('.nav .links');
+      
+      if (menuToggle && menuLinks) {
+        menuToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          menuLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function() {
+          menuLinks.classList.remove('active');
+        });
+        
+        // Prevent closing when clicking on the menu
+        menuLinks.addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
+        
+        // Close menu when a link is clicked (for smooth navigation)
+        document.querySelectorAll('.nav .links a').forEach(link => {
+          link.addEventListener('click', () => {
+            menuLinks.classList.remove('active');
+          });
+        });
+      }
+      
+      // Update year in footer
+      const yearElement = document.getElementById('year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
     });
   </script>
 </body>
