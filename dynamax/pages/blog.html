@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Elyash Ship Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .blog-card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .blog-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .blog-card:hover .blog-img img {
+            transform: scale(1.05);
+        }
+        .blog-meta {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .blog-meta i {
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><img src="../images/dynamaxlogo1.png" alt="" height="80px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="contact.html" class="btn btn-primary">Contact Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background: url('../images/bg-5.jpg') center center/cover no-repeat; min-height: 220px; display: flex; align-items: center; position:relative;">
+    <style>.page-header::after {content: '';position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);z-index:1;} .page-header > .container, .page-header h1 {position:relative;z-index:2;}</style>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center text-white">
+                    <h1 style="font-weight:700;">Blog</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="blog-card p-0">
+                        <img src="../images/img-1.jpg" alt="Blog 1" class="img-fluid rounded-top">
+                        <div class="p-4">
+                            <h5 class="fw-bold">Crafting Captivating Headlines: Your awesome post title goes here</h5>
+                            <div class="text-muted mb-2" style="font-size: 0.9rem;">August 7, 2024</div>
+                            <p class="mb-3">Engaging introduction. Capturing Your Audience's Interest: The Initial impression your headline makes, and what you want your readers to...</p>
+                            <a href="blog-detail-1.html" class="text-primary fw-semibold">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card p-0">
+                        <img src="../images/img-2.jpg" alt="Blog 2" class="img-fluid rounded-top">
+                        <div class="p-4">
+                            <h5 class="fw-bold">The Art of Drawing Readers In: Your attractive post title goes here</h5>
+                            <div class="text-muted mb-2" style="font-size: 0.9rem;">August 7, 2024</div>
+                            <p class="mb-3">Engaging introduction. Capturing Your Audience's Interest: The Initial impression your headline makes, and what you want your readers to...</p>
+                            <a href="blog-detail-2.html" class="text-primary fw-semibold">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card p-0">
+                        <img src="../images/img-3.jpg" alt="Blog 3" class="img-fluid rounded-top">
+                        <div class="p-4">
+                            <h5 class="fw-bold">Mastering the First Impression: Your intriguing post title goes here</h5>
+                            <div class="text-muted mb-2" style="font-size: 0.9rem;">August 7, 2024</div>
+                            <p class="mb-3">Engaging introduction. Capturing Your Audience's Interest: The Initial impression your headline makes, and what you want your readers to...</p>
+                            <a href="blog-detail-3.html" class="text-primary fw-semibold">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card p-0">
+                        <div class="p-4">
+                            <h5 class="fw-bold">Hello world!</h5>
+                            <div class="text-muted mb-2" style="font-size: 0.9rem;">August 7, 2024</div>
+                            <p class="mb-3">Welcome to Astra Starter Templates. This is your first post. Edit or delete it, then start blogging!</p>
+                            <a href="blog-detail-hello.html" class="text-primary fw-semibold">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Footer Section -->
+    <footer class="bg-light py-5 mt-5 border-top" style="color:#222;">
+        <div class="container">
+            <div class="row text-center text-md-start gy-4">
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">About Us</h6>
+                    <p style="font-size: 0.95rem;">Dynamax Ship Management is the market leader in providing expert crew management, technical management, and marine services, with a passion for quality and a focus on safety, sustainability, and growth in the maritime sector.</p>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Our Services</h6>
+                    <ul class="list-unstyled" style="font-size: 0.95rem;">
+                        <li>Crew Management</li>
+                        <li>Technical Management</li>
+                        <li>Marine Insurance</li>
+                        <li>Marine Services</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Our Address</h6>
+                    <p style="font-size: 0.95rem;">Office no 5C-14, Hiranandani Solitaire Mall, Sector 18, Vashi, Navi Mumbai, Maharashtra 400705</p>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Working Hours</h6>
+                    <ul class="list-unstyled" style="font-size: 0.95rem;">
+                        <li>Monday to Saturday: 10:00am to 6:00pm</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>About DYNAMAX</h5>
+                    <p class="text-muted">Providing comprehensive maritime solutions with excellence and reliability since our inception.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <!-- <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a> -->
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-muted">Home</a></li>
+                        <li><a href="about.html" class="text-muted">About Us</a></li>
+                        <li><a href="services.html" class="text-muted">Services</a></li>
+                        <li><a href="blog.html" class="text-muted">Blog</a></li>
+                        <li><a href="contact.html" class="text-muted">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="services.html#crew-management" class="text-muted">Crew Management</a></li>
+                        <li><a href="services.html#technical-management" class="text-muted">Technical Management</a></li>
+                        <li><a href="services.html#marine-insurance" class="text-muted">Marine Insurance</a></li>
+                        <li><a href="services.html#marine-services" class="text-muted">Marine Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Maritime St, Port City, 400001</li>
+                        <li><i class="fas fa-phone me-2"></i> +91 1234567890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@elyashship.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 DYNAMAX. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> by by Groww You</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
