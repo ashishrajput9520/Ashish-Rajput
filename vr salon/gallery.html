@@ -107,8 +107,15 @@
         <span class="brand-logo" aria-hidden="true">
           <img src="img/vr logo salon 2.png" alt="VR Beauty Salon Logo" style="height: 70px;">
         </span>
-        <span class="brand-name">VR BeautY Salon</span>
+        <span class="brand-name" style="white-space:nowrap;">VR BeautY Salon</span>
       </a>
+      <div class="links">
+        <a href="vr beauty salon.html#home" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a class="btn" href="contact.html">Book Now</a>
+      </div>
       <button class="menu-toggle" aria-label="Toggle menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -116,13 +123,6 @@
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
-      <div class="links">
-        <a href="vr beauty salon.html" class="nav-link">Home</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="gallery.html" class="nav-link active">Gallery</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a class="btn" href="contact.html">Book Now</a>
-      </div>
     </nav>
   </header>
 
@@ -148,7 +148,7 @@
       <div class="faq-container">
         <div class="faq-item">
           <div class="faq-question">What are your working hours?<span class="faq-toggle">+</span></div>
-          <div class="faq-answer">We’re open from 10:00 AM to 7:00 PM, Monday through Sunday.</div>
+          <div class="faq-answer">We're open from 10:00 AM to 7:00 PM, Monday through Sunday.</div>
         </div>
         <div class="faq-item">
           <div class="faq-question">How do I book an appointment?<span class="faq-toggle">+</span></div>
@@ -156,7 +156,7 @@
         </div>
         <div class="faq-item">
           <div class="faq-question">What payment methods do you accept?<span class="faq-toggle">+</span></div>
-          <div class="faq-answer">We accept cash, UPI, and all major credit/debit cards.</div>
+          <div class="faq-answer">We accept cash & UPI.</div>
         </div>
         <div class="faq-item">
           <div class="faq-question">Do you offer bridal packages?<span class="faq-toggle">+</span></div>
@@ -165,6 +165,24 @@
       </div>
     </div>
   </section>
+
+<script>
+// FAQ Accordion Functionality (same as homepage)
+document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', function() {
+      // Close all others
+      faqItems.forEach(i => {
+        if (i !== item) i.classList.remove('active');
+      });
+      // Toggle current
+      item.classList.toggle('active');
+    });
+  });
+});
+</script>
   <section id="contact">
     <div class="container contact">
       <div>

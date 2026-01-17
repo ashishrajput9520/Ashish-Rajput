@@ -125,7 +125,7 @@
         <span class="brand-logo" aria-hidden="true">
           <img src="img/vr logo salon 2.png" alt="VR Beauty Salon Logo" style="height: 70px;">
         </span>
-        <span class="brand-name">VR BeautY Salon</span>
+        <span class="brand-name" style="white-space:nowrap;">VR BeautY Salon</span>
       </a>
       <button class="menu-toggle" aria-label="Toggle menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -411,12 +411,11 @@
         </div>
       </div>
     </div>
-
-    <div class="cta" style="text-align: center; margin-top: 50px;">
-      <h2>Ready to experience our services?</h2>
-      <p>Book your appointment today and let us pamper you.</p>
-      <a href="contact.html" class="btn btn-primary">Book Now</a>
-    </div>
+      <div class="cta" style="text-align: center; margin: 50px 0 40px; display: flex; flex-direction: column; gap: 12px;">
+        <h2>Ready to experience our services?</h2>  
+          <p style="margin-top: -20px;">Book your appointment today and let us take care of your beauty needs.</p>
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 0px; align-self: center;">Book Now</a>
+      </div>
   </div>
 
   <footer>
@@ -570,10 +569,23 @@
       bookNowBtns.forEach(btn => {
         btn.addEventListener('click', function() {
           const serviceCard = this.closest('.service-card');
+          let serviceName = '';
           if (serviceCard) {
-            const serviceName = serviceCard.querySelector('.service-title').textContent;
+            // Try .service-title (h3), then strong, fallback to empty
+            const titleEl = serviceCard.querySelector('.service-title') || serviceCard.querySelector('strong');
+            if (titleEl) {
+              serviceName = titleEl.textContent.trim();
+            }
+            // Set value if matching option exists
             const serviceSelect = document.getElementById('service');
-            serviceSelect.value = serviceName;
+            if (serviceSelect && serviceName) {
+              for (let opt of serviceSelect.options) {
+                if (opt.text.trim().toLowerCase() === serviceName.toLowerCase()) {
+                  serviceSelect.value = opt.value;
+                  break;
+                }
+              }
+            }
           }
           modal.classList.add('show');
           document.body.style.overflow = 'hidden';
