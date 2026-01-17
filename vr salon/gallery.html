@@ -62,6 +62,7 @@
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
+        margin-left: 60px;
       }
       
       .nav .links {
@@ -109,13 +110,6 @@
         </span>
         <span class="brand-name" style="white-space:nowrap;">VR BeautY Salon</span>
       </a>
-      <div class="links">
-        <a href="vr beauty salon.html#home" class="nav-link">Home</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="gallery.html" class="nav-link">Gallery</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a class="btn" href="contact.html">Book Now</a>
-      </div>
       <button class="menu-toggle" aria-label="Toggle menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -123,9 +117,15 @@
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
+      <div class="links">
+        <a href="vr beauty salon.html#home" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a class="btn" href="contact.html">Book Now</a>
+      </div>
     </nav>
   </header>
-
   <div class="gallery-container">
     <a href="vr beauty salon.html" class="back-to-home">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -292,35 +292,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   </script>
   <script>
-    // Mobile menu toggle
+    // Mobile menu toggle (EXACT copy from homepage)
     document.addEventListener('DOMContentLoaded', function() {
       const menuToggle = document.querySelector('.menu-toggle');
       const menuLinks = document.querySelector('.nav .links');
       
-      if (menuToggle && menuLinks) {
-        menuToggle.addEventListener('click', function(e) {
-          e.stopPropagation();
-          menuLinks.classList.toggle('active');
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function() {
+      menuToggle.addEventListener('click', function() {
+        menuLinks.classList.toggle('active');
+      });
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!event.target.closest('.nav') && menuLinks.classList.contains('active')) {
+          menuLinks.classList.remove('active');
+        }
+      });
+      // Close menu when a link is clicked
+      document.querySelectorAll('.nav .links a').forEach(link => {
+        link.addEventListener('click', () => {
           menuLinks.classList.remove('active');
         });
-        
-        // Prevent closing when clicking on the menu
-        menuLinks.addEventListener('click', function(e) {
-          e.stopPropagation();
-        });
-        
-        // Close menu when a link is clicked (for smooth navigation)
-        document.querySelectorAll('.nav .links a').forEach(link => {
-          link.addEventListener('click', () => {
-            menuLinks.classList.remove('active');
-          });
-        });
-      }
-      
+      });
       // Update year in footer
       const yearElement = document.getElementById('year');
       if (yearElement) {
