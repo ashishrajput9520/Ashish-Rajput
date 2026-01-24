@@ -402,12 +402,227 @@
     .btn-logout:hover {
       background: rgba(255, 255, 255, 0.2);
     }
-    .inquiries-list {
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .inquiries-dashboard-block {
+      background: #f6f6f6;
+      border-radius: 10px;
+      padding: 18px 18px 24px 18px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
+    .inquiries-summary-bar {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 18px;
+      align-items: center;
+    }
+    .summary-box {
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px 28px 12px 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 120px;
+    }
+    .summary-box.open-requests {
+      border: 2px solid #e74a3b;
+    }
+    .summary-box.recently-solved {
+      border: 2px solid #3498db;
+    }
+    .summary-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: #888;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    .summary-count {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #e74a3b;
+    }
+    .summary-box.recently-solved .summary-count {
+      color: #3498db;
+    }
+    .new-request-btn {
+      background: #e74a3b;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-left: auto;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .new-request-btn:hover {
+      background: #c0392b;
+    }
+    .inquiries-table-block {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+      padding: 16px 0 0 0;
+    }
+    .inquiries-table-status {
+      padding: 0 24px 12px 24px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #444;
+    }
+    .inquiries-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .inquiries-table th, .inquiries-table td {
+      padding: 12px 18px;
+      text-align: left;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 15px;
+    }
+    .inquiries-table th {
+      background: #f8f8f8;
+      font-weight: 600;
+      color: #222;
+      letter-spacing: 0.5px;
+      border-top: 1px solid #f0f0f0;
+    }
+    .inquiries-table tr:last-child td {
+      border-bottom: none;
+    }
+    .inquiries-table tbody tr:hover {
+      background: #f6f8fa;
+    }
+    .inquiries-table td {
+      color: #444;
+    }
+    .inquiries-table td:first-child {
+      font-weight: 600;
+      color: #e74a3b;
+    }
+    .inquiries-table td:nth-child(2) {
+      color: #3498db;
+      font-weight: 500;
+    }
+    .inquiries-table td:nth-child(3) {
+      font-weight: 500;
+    }
+    .inquiries-table td:nth-child(4) {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Gallery styles */
+.gallery-upload-block {
+  margin: 24px 0 18px 0;
+  display: flex;
+  align-items: center;
+}
+.gallery-upload-label {
+  background: #e8f0fe;
+  color: #1a73e8;
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+.gallery-upload-label:hover {
+  background: #d2e3fc;
+}
+.gallery-upload-block .btn-primary {
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.gallery-upload-block .btn-primary:hover {
+  background: #1669bb;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+.gallery-img-wrap {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-img {
+  max-width: 100%;
+  max-height: 140px;
+  border-radius: 6px;
+  display: block;
+}
+.no-gallery {
+  text-align: center;
+  color: #888;
+  font-size: 1.1rem;
+  padding: 40px 0;
+}
+
+    /* Action buttons styling */
+    .action-buttons {
+      display: flex;
+      gap: 8px;
+      padding: 8px 0;
+    }
+
+    .btn-edit, .btn-complete {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-edit {
+      background: #e8f0fe;
+      color: #1a73e8;
+    }
+
+    .btn-edit:hover {
+      background: #d2e3fc;
+    }
+
+    .btn-complete {
+      background: #e6f4ea;
+      color: #188038;
+    }
+
+    .btn-complete:hover {
+      background: #ceead6;
+    }
+
+    .action-buttons i {
+      font-size: 12px;
+    }
+
     .inquiry-item {
       padding: 20px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -703,6 +918,9 @@
         <a href="#staff" data-section="staff">
           <i class="fas fa-users"></i> Staff
         </a>
+        <a href="#gallery" data-section="gallery">
+          <i class="fas fa-images"></i> Gallery
+        </a>
         <a href="#profile" data-section="profile">
           <i class="fas fa-user"></i> Profile
         </a>
@@ -725,10 +943,36 @@
         </div>
       </div>
 
-    <div id="inquiriesList" class="inquiries-list">
-      <!-- Inquiries will be loaded here -->
-      <div class="no-inquiries">Loading inquiries...</div>
+    <div class="inquiries-dashboard-block">
+  <div class="inquiries-summary-bar">
+    <div class="summary-box open-requests">
+      <div class="summary-title">OPEN REQUESTS</div>
+      <div class="summary-count" id="openRequestsCount">0</div>
     </div>
+    <div class="summary-box recently-solved">
+      <div class="summary-title">RECENTLY SOLVED</div>
+      <div class="summary-count" id="solvedRequestsCount">0</div>
+    </div>
+    <button class="new-request-btn" id="newRequestBtn">New Request</button>
+  </div>
+  <div class="inquiries-table-block">
+    <div class="inquiries-table-status">Status: <span id="inquiriesStatus">Open</span></div>
+    <table class="inquiries-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Subject</th>
+          <th>Requester</th>
+          <th>Opened</th>
+          <th>Updated</th>
+        </tr>
+      </thead>
+      <tbody id="inquiriesTableBody">
+        <!-- Inquiry rows will be rendered here -->
+      </tbody>
+    </table>
+  </div>
+</div>
   </div>
 
   <script>
@@ -805,10 +1049,54 @@
           loadDashboard();
           break;
         case 'inquiries':
+          // Render the inquiries section HTML before loading data
+          mainContent.innerHTML = `
+            <div class="admin-header">
+              <h1 class="admin-title">Inquiries</h1>
+              <div class="admin-actions">
+                <button id="refreshBtn" class="btn-icon" title="Refresh">
+                  <i class="fas fa-sync-alt"></i>
+                </button>
+              </div>
+            </div>
+            <div class="inquiries-dashboard-block">
+              <div class="inquiries-summary-bar">
+                <div class="summary-box open-requests">
+                  <div class="summary-title">OPEN REQUESTS</div>
+                  <div class="summary-count" id="openRequestsCount">0</div>
+                </div>
+                <div class="summary-box recently-solved">
+                  <div class="summary-title">RECENTLY SOLVED</div>
+                  <div class="summary-count" id="solvedRequestsCount">0</div>
+                </div>
+                <button class="new-request-btn" id="newRequestBtn">New Request</button>
+              </div>
+              <div class="inquiries-table-block">
+                <div class="inquiries-table-status">Status: <span id="inquiriesStatus">Open</span></div>
+                <table class="inquiries-table">
+                  <thead>
+                    <tr>
+                      <th>Subject</th>
+                      <th>Name</th>
+                      <th>Phone</th>
+                      <th>Status</th>
+                      <th>Updated</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="inquiriesTableBody">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          `;
           loadInquiries();
           break;
         case 'staff':
           loadStaff();
+          break;
+        case 'gallery':
+          loadGallery();
           break;
         case 'profile':
           loadProfile();
@@ -816,6 +1104,74 @@
         default:
           loadDashboard();
       }
+    }
+
+    // Load Gallery Section
+    function loadGallery() {
+      mainContent.innerHTML = `
+        <div class="admin-header">
+          <h1 class="admin-title">Gallery Management</h1>
+        </div>
+        <div class="gallery-upload-block">
+          <form id="galleryUploadForm">
+            <label for="galleryImageInput" class="gallery-upload-label">
+              <i class="fas fa-upload"></i> Add Image
+            </label>
+            <input type="file" id="galleryImageInput" accept="image/*" style="display:none;" required />
+            <button type="submit" class="btn btn-primary">Upload</button>
+          </form>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      `;
+      renderGalleryImages();
+      // Ensure clicking the label opens the file dialog
+      const galleryLabel = document.querySelector('.gallery-upload-label');
+      const galleryInput = document.getElementById('galleryImageInput');
+      if (galleryLabel && galleryInput) {
+        galleryLabel.onclick = function(e) {
+          e.preventDefault();
+          galleryInput.click();
+        };
+      }
+      // Optionally auto-submit form when file is selected
+      if (galleryInput) {
+        galleryInput.onchange = function() {
+          if (galleryInput.files && galleryInput.files[0]) {
+            document.getElementById('galleryUploadForm').requestSubmit();
+          }
+        };
+      }
+      document.getElementById('galleryUploadForm').onsubmit = function(e) {
+        e.preventDefault();
+        const fileInput = document.getElementById('galleryImageInput');
+        const file = fileInput.files[0];
+        if (!file) {
+          alert('Please select an image to upload.');
+          return;
+        }
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const images = JSON.parse(localStorage.getItem('galleryImages') || '[]');
+          images.push(event.target.result);
+          localStorage.setItem('galleryImages', JSON.stringify(images));
+          renderGalleryImages();
+        };
+        reader.onerror = function() {
+          alert('Image upload failed. Please try again.');
+        };
+        reader.readAsDataURL(file);
+        fileInput.value = '';
+      };
+    }
+    function renderGalleryImages() {
+      const grid = document.getElementById('galleryGrid');
+      if (!grid) return;
+      const images = JSON.parse(localStorage.getItem('galleryImages') || '[]');
+      if (images.length === 0) {
+        grid.innerHTML = '<div class="no-gallery">No images in gallery. Use the form above to add.</div>';
+        return;
+      }
+      grid.innerHTML = images.map(src => `<div class="gallery-img-wrap"><img src="${src}" class="gallery-img" /></div>`).join('');
     }
 
     // Load Dashboard
@@ -1482,55 +1838,184 @@
     // Initial update of pending count
     updatePendingCount();
 
-    // Function to render inquiries
+    // Load inquiries section (table and summary bar)
+    function loadInquiries() {
+      // No need to re-render HTML, just re-render data
+      renderInquiries();
+      // Attach new request button handler (if not already attached)
+      const newRequestBtn = document.getElementById('newRequestBtn');
+      if (newRequestBtn && !newRequestBtn.dataset.bound) {
+        newRequestBtn.onclick = function() {
+          alert('New Request functionality coming soon!');
+        };
+        newRequestBtn.dataset.bound = 'true';
+      }
+    }
+    // Function to render inquiries in the table format
     function renderInquiries() {
-      const container = document.getElementById('inquiriesList');
-      
+      // Summary counts
+      const openCount = inquiries.filter(i => i.status === 'pending').length;
+      const solvedCount = inquiries.filter(i => i.status === 'completed').length;
+      document.getElementById('openRequestsCount').textContent = openCount;
+      document.getElementById('solvedRequestsCount').textContent = solvedCount;
+
+      // Update status text
+      document.getElementById('inquiriesStatus').textContent = 
+        `${openCount} Open, ${solvedCount} Completed`;
+
+      // Table body
+      const tableBody = document.getElementById('inquiriesTableBody');
+      if (!tableBody) return;
       if (inquiries.length === 0) {
-        container.innerHTML = '<div class="no-inquiries">No inquiries found.</div>';
+        tableBody.innerHTML = '<tr><td colspan="6" style="text-align:center;">No inquiries found.</td></tr>';
         return;
       }
-
       // Sort by date (newest first)
       const sortedInquiries = [...inquiries].sort((a, b) => new Date(b.date) - new Date(a.date));
-
-      container.innerHTML = sortedInquiries.map((inquiry, index) => {
-        const date = new Date(inquiry.date).toLocaleString();
-        const statusClass = inquiry.status === 'completed' ? 'status-completed' : 'status-pending';
-        
+      tableBody.innerHTML = sortedInquiries.map((inquiry, index) => {
+        const updated = inquiry.updatedAt ? new Date(inquiry.updatedAt).toLocaleString() : new Date(inquiry.date).toLocaleString();
         return `
-          <div class="inquiry-item" data-id="${index}">
-            <div class="inquiry-header">
-              <h3 class="inquiry-name">${inquiry.name}</h3>
-              <span class="status-badge ${statusClass}">${inquiry.status || 'pending'}</span>
-            </div>
-            <div class="inquiry-email">${inquiry.email}</div>
-            <div class="inquiry-phone">${inquiry.phone || 'No phone provided'}</div>
-            ${inquiry.service ? `<div class="inquiry-service">${inquiry.service}</div>` : ''}
-            
-            <div class="inquiry-details">
-              <div class="detail-row">
-                <div class="detail-label">Date:</div>
-                <div class="detail-value">${date}</div>
-              </div>
-              <div class="detail-row">
-                <div class="detail-label">Message:</div>
-                <div class="detail-value">${inquiry.message || 'No message provided'}</div>
-              </div>
-            </div>
-
-            <div class="inquiry-actions">
-              <button class="btn btn-edit" onclick="editInquiry(${index})">
-                <i class="fas fa-edit"></i> Edit
+          <tr>
+            <td>${inquiry.subject || (inquiry.service ? 'RE: ' + inquiry.service : '(No Subject)')}</td>
+            <td>${inquiry.name || 'N/A'}</td>
+            <td>${inquiry.phone || 'N/A'}</td>
+            <td>
+              <select class="status-select" data-index="${index}" onchange="updateStatus(${index}, this.value)" style="padding: 4px 8px; border-radius: 4px; border: 1px solid #ddd;">
+                <option value="pending" ${inquiry.status === 'pending' ? 'selected' : ''}>Pending</option>
+                <option value="completed" ${inquiry.status === 'completed' ? 'selected' : ''} style="background-color: #e6f4ea; color: #188038;">Completed</option>
+              </select>
+            </td>
+            <td>${updated}</td>
+            <td class="action-buttons">
+              <button class="btn-edit" onclick="editInquiry(${index})" title="Edit">
+                <i class="fas fa-edit"></i>
               </button>
-              <button class="btn btn-delete" onclick="deleteInquiry(${index})">
-                <i class="fas fa-trash"></i> Delete
+              <button class="btn-delete" onclick="deleteInquiry(${index})" title="Delete">
+                <i class="fas fa-trash"></i>
               </button>
-            </div>
-          </div>
+            </td>
+          </tr>
         `;
       }).join('');
     }
+
+    // Add these functions after the renderInquiries function
+    window.editInquiry = function(index) {
+        const inquiry = inquiries[index];
+        if (!inquiry) return;
+        
+        // Create a form for editing
+        const formHtml = `
+            <div class="edit-form">
+                <h3>Edit Inquiry</h3>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="editName" value="${(inquiry.name || '').replace(/"/g, '&quot;')}">
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" id="editPhone" value="${(inquiry.phone || '').replace(/"/g, '&quot;')}">
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" id="editSubject" value="${((inquiry.subject || inquiry.service) ? (inquiry.subject || 'RE: ' + inquiry.service) : '').replace(/"/g, '&quot;')}">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="editMessage" rows="4">${(inquiry.message || '').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
+                </div>
+                <div class="form-group" style="margin-top: 20px;">
+                    <button class="btn-edit" onclick="saveInquiry(${index})">Save Changes</button>
+                    <button class="btn-secondary" onclick="closeModal()" style="margin-left: 10px;">Cancel</button>
+                </div>
+            </div>
+        `;
+        
+        showModal(formHtml);
+    };
+
+    window.completeInquiry = function(index) {
+        if (confirm('Mark this inquiry as completed?')) {
+            inquiries[index].status = 'completed';
+            inquiries[index].updatedAt = new Date().toISOString();
+            localStorage.setItem('inquiries', JSON.stringify(inquiries));
+            renderInquiries();
+        }
+    };
+
+    // Helper functions for modal
+    function showModal(content) {
+        let modal = document.getElementById('customModal');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'customModal';
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0,0,0,0.5)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '1000';
+            
+            const modalContent = document.createElement('div');
+            modalContent.style.background = 'white';
+            modalContent.style.padding = '20px';
+            modalContent.style.borderRadius = '8px';
+            modalContent.style.maxWidth = '500px';
+            modalContent.style.width = '90%';
+            modalContent.style.maxHeight = '90vh';
+            modalContent.style.overflowY = 'auto';
+            modalContent.id = 'modalContent';
+            
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // Close modal when clicking outside content
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+        
+        document.getElementById('modalContent').innerHTML = content;
+        modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('customModal');
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    window.saveInquiry = function(index) {
+        const name = document.getElementById('editName').value.trim();
+        const phone = document.getElementById('editPhone').value.trim();
+        const subject = document.getElementById('editSubject').value.trim();
+        const message = document.getElementById('editMessage').value.trim();
+        
+        if (!name || !phone) {
+            alert('Name and phone are required');
+            return;
+        }
+        
+        inquiries[index] = {
+            ...inquiries[index],
+            name,
+            phone,
+            subject: subject || inquiries[index].subject,
+            message: message || inquiries[index].message,
+            updatedAt: new Date().toISOString()
+        };
+        
+        localStorage.setItem('inquiries', JSON.stringify(inquiries));
+        closeModal();
+        renderInquiries();
+    };
 
     // Function to delete an inquiry
     window.deleteInquiry = function(index) {
@@ -1604,8 +2089,8 @@
       renderInquiries();
     };
 
-    // Initial render
-    renderInquiries();
+    // Initial section load
+    loadInitialSection();
   </script>
 </body>
 </html>
